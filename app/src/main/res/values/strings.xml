@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Moneygement</string>
+    <string name="Logoutbtn">ログアウト</string>
+    <string name="yesbtn">はい</string>
+    <string name="nobtn">いいえ</string>
 </resources>
