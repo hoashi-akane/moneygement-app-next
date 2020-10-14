@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="716dp"
         android:layout_height="152dp"
         android:background="#F1F1F1"
@@ -15,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageArea"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
@@ -25,99 +26,127 @@
             android:text="記録"
             android:textColor="#000000"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="108dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.384" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="61dp"
             android:layout_height="37dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="4dp"
             android:text="グラフ"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="205dp" />
+            app:layout_constraintEnd_toStartOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="89dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="47dp"
+            android:layout_height="31dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="12dp"
             android:text="貯金"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="354dp" />
+            app:layout_constraintEnd_toStartOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="80dp"
             android:layout_height="25dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="12dp"
             android:text="グループ"
             android:textColor="#000000"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="483dp"
-            tools:layout_editor_absoluteY="103dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="73dp"
             android:layout_height="33dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="28dp"
             android:text="ブログ"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="611dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintVertical_bias="0.692" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="73dp"
             android:layout_height="67dp"
             android:background="#00F3F3F3"
-            app:srcCompat="@mipmap/img3"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="23dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="124dp"
-            android:layout_height="99dp"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/img1"
-            tools:layout_editor_absoluteX="319dp" />
+            app:layout_constraintVertical_bias="0.305"
+            app:srcCompat="@mipmap/img3" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="109dp"
             android:layout_height="86dp"
-            app:srcCompat="@mipmap/img6"
-            tools:layout_editor_absoluteX="591dp"
-            tools:layout_editor_absoluteY="20dp" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="104dp"
-            android:layout_height="286dp"
-            app:srcCompat="@mipmap/img2"
-            tools:layout_editor_absoluteX="471dp"
-            tools:layout_editor_absoluteY="-83dp" />
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.348"
+            app:srcCompat="@mipmap/img6" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="82dp"
-            android:layout_height="73dp"
-            app:srcCompat="@mipmap/img5"
-            tools:layout_editor_absoluteX="187dp"
-            tools:layout_editor_absoluteY="29dp" />
+            android:layout_width="74dp"
+            android:layout_height="69dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.295"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.291"
+            app:srcCompat="@mipmap/img5" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="115dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="52dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.18"
+            app:srcCompat="@mipmap/img1" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="102dp"
+            android:layout_height="188dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:srcCompat="@mipmap/img2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="708dp"
+        android:layout_height="1467dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageArea"
@@ -125,7 +154,7 @@
             android:layout_height="741dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/img7" />
@@ -138,8 +167,12 @@
             android:textColor="#FDFCFC"
             android:textSize="180px"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="39dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.043" />
 
         <TextView
             android:id="@+id/textView7"
@@ -158,11 +191,17 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1236dp"
             android:text="現在の貯金額"
             android:textSize="80px"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="437dp"
-            tools:layout_editor_absoluteY="152dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.918"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView7"
+            app:layout_constraintVertical_bias="1.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
