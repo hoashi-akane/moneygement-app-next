@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Moneygement</string>
+    <string name="NickName">ニックネーム</string>
+    <string name="Name">本名</string>
+    <string name="eMail">メールアドレス</string>
+    <string name="Member">会員登録</string>
+    <string name="Name">本名</string>
+    <string name="NickName">ニックネーム</string>
+    <string name="password">パスワード</string>
+    <string name="Reverse">戻る</string>
+    <string name="NickName">ニックネーム</string>
+    <string name="NickName">ニックネーム</string>
+    <string name="Nameview">Ｔａｒｏ</string>
+    <string name="Nameview2">麻生　太郎</string>
+    <string name="Nameview3">本名</string>
+    <string name="Nameview4">ニックネーム</string>
+    <string name="Nameview5">メールアドレス</string>
+    <string name="NameView6">*******@s.asojuku.ac.jp</string>
+    <string name="Nameview7">貯金額</string>
+    <string name="Nameview8">￥10,800</string>
+    <string name="Nameview9">会員ID</string>
+    <string name="Nameview10">Taro0204</string>
+    <string name="Login">ログイン</string>
+    <string name="id">会員ID</string>
 </resources>
