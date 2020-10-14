@@ -17,4 +17,7 @@
     <string name="january">2020年　1月</string>
     <string name="month">年　月</string>
     <string name="amountamount">+500円</string>
+    <string name="Logoutbtn">ログアウト</string>
+    <string name="yesbtn">はい</string>
+    <string name="nobtn">いいえ</string>
 </resources>

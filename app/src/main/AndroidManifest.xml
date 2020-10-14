@@ -14,6 +14,8 @@
         <activity android:name=".DispExpensesCalendarActivity" />
         <activity android:name=".InputSavingAmountActivity" />
         <activity android:name=".DispCalendarActivity"></activity>
+        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
