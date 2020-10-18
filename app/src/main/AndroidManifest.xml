@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".NewMemberConfirmActivity"></activity>
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".NewMemberActivity">
         <activity android:name=".DispSavingshistoryActivity" />
         <activity android:name=".InputSpendingExpenseAmountActivity" />
         <activity android:name=".DispExpensesCalendarActivity" />
@@ -21,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
