@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DispCalendarActivity">
+    tools:context=".controller.DispCalendarActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="487dp"
+        android:layout_width="415dp"
         android:layout_height="77dp"
         android:background="#D7DEE6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +20,12 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="130dp"
             android:layout_height="45dp"
+            android:layout_marginStart="24dp"
             android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.593"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -55,8 +57,8 @@
         app:layout_constraintVertical_bias="0.318" />
 
     <TableLayout
-        android:layout_width="473dp"
-        android:layout_height="101dp"
+        android:layout_width="409dp"
+        android:layout_height="124dp"
         android:background="#D7DEE6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,8 +68,8 @@
         app:layout_constraintVertical_bias="1.0">
 
         <TableRow
-            android:layout_width="470dp"
-            android:layout_height="128dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             tools:ignore="MissingConstraints">
 
             <Button
