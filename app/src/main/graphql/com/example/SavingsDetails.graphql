@@ -1,0 +1,32 @@
+mutation insertSavingsDetails(
+$savingId: Int!
+$savingAmount: Int!
+$savingDate: Date!
+$note: String!
+){
+  createSavingDetail(input:{
+       savingId: $savingId
+       savingAmount: $savingAmount
+       savingDate: $savingDate
+       note: $note
+  })
+}
+
+query savingsDetails(
+    $savings_id: Int!
+    $first: Int!
+    $last: Int!
+){
+  savingsDetails(input:{
+    savings_id: $savings_id
+    first: $first
+    last: $last
+  })
+  {
+    id
+    saving_id
+    saving_amount
+    note
+    saving_date
+  }
+}
