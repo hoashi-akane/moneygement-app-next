@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".InputSavingAmountActivity">
+    tools:context=".controller.InputSavingAmountActivity">
 
     <TextView
         android:id="@+id/date"
@@ -94,7 +94,7 @@
                 tools:text="@string/Amountofmoney" />
 
             <EditText
-                android:id="@+id/editTextNumberSigned"
+                android:id="@+id/money"
                 android:layout_width="312dp"
                 android:layout_height="match_parent"
                 android:background="#00000000"
@@ -121,7 +121,7 @@
                 tools:text="@string/memo" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/note"
                 android:layout_width="wrap_content"
                 android:layout_height="73dp"
                 android:background="#00000000"
