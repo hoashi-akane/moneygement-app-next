@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F0"
+    tools:context=".NewMemberActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="411dp"
+        android:layout_height="105dp"
+        android:background="@color/colorAccent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/edit-image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/img_520307"
+        tools:layout_editor_absoluteX="365dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <ImageView
+        android:id="@+id/icon-image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtNameView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <TextView
+        android:id="@+id/txtNameView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview4"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="245dp" />
+
+    <TextView
+        android:id="@+id/txtNameView2"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview2"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="353dp" />
+
+    <TextView
+        android:id="@+id/txtNameView3"
+        android:layout_width="38dp"
+        android:layout_height="22dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview3"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+    <TextView
+        android:id="@+id/txtNameView6"
+        android:layout_width="322dp"
+        android:layout_height="46dp"
+        android:hint="@string/Nameview"
+        android:text="@string/NameView6"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <TextView
+        android:id="@+id/txtNameView5"
+        android:layout_width="129dp"
+        android:layout_height="23dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview5"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <TextView
+        android:id="@+id/txtNameView10"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview10"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="441dp" />
+
+    <TextView
+        android:id="@+id/txtNameView9"
+        android:layout_width="55dp"
+        android:layout_height="21dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview9"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <TextView
+        android:id="@+id/txtNameView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/electrolize"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview8"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <TextView
+        android:id="@+id/txtNameView7"
+        android:layout_width="75dp"
+        android:layout_height="32dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview7"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
