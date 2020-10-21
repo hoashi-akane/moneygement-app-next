@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".NewMemberConfirmActivity"></activity>
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".NewMemberActivity">
+        <activity android:name=".DispCalendarIncomeHouseholdAccountBookActivity"></activity>
+        <activity android:name=".InputIncomeHouseholdAccountBookActivity" />
+        <activity android:name=".DispHouseholdAccountBookActivity" />
+        <activity android:name=".NewMemberActivity" />
         <activity android:name=".DispSavingshistoryActivity" />
         <activity android:name=".InputSpendingExpenseAmountActivity" />
         <activity android:name=".DispExpensesCalendarActivity" />
         <activity android:name=".InputSavingAmountActivity" />
-        <activity android:name=".DispCalendarActivity"></activity>
+        <activity android:name=".DispCalendarActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
