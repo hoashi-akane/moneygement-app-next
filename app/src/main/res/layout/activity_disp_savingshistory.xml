@@ -63,7 +63,7 @@
             android:background="#f5f5f5">
 
             <TextView
-                android:id="@+id/savingdate"
+                android:id="@+id/spending"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"

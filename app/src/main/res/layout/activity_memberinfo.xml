@@ -36,35 +36,36 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/txtNameView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/Nameview"
-        android:text="@string/Nameview"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <TextView
-        android:id="@+id/txtNameView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/Nameview"
-        android:text="@string/Nameview4"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="245dp" />
-
-    <TextView
         android:id="@+id/txtNameView2"
         android:layout_width="159dp"
         android:layout_height="40dp"
         android:hint="@string/Nameview"
         android:text="@string/Nameview2"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="353dp" />
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="537dp" />
+
+    <TextView
+        android:id="@+id/txtNameView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview4"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="472dp" />
+
+    <TextView
+        android:id="@+id/txtNameView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Nameview"
+        android:text="@string/Nameview"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="464dp" />
 
     <TextView
         android:id="@+id/txtNameView3"
@@ -74,18 +75,22 @@
         android:text="@string/Nameview3"
         android:textSize="18sp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="324dp" />
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="548dp" />
 
     <TextView
-        android:id="@+id/txtNameView6"
-        android:layout_width="322dp"
-        android:layout_height="46dp"
+        android:id="@+id/txtNameView9"
+        android:layout_width="55dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="48dp"
         android:hint="@string/Nameview"
-        android:text="@string/NameView6"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="541dp" />
+        android:text="@string/Nameview9"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
     <TextView
         android:id="@+id/txtNameView5"
@@ -95,8 +100,18 @@
         android:text="@string/Nameview5"
         android:textSize="18sp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="498dp" />
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="331dp" />
+
+    <TextView
+        android:id="@+id/txtNameView6"
+        android:layout_width="256dp"
+        android:layout_height="32dp"
+        android:hint="@string/Nameview"
+        android:text="@string/NameView6"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="380dp" />
 
     <TextView
         android:id="@+id/txtNameView10"
@@ -105,19 +120,10 @@
         android:hint="@string/Nameview"
         android:text="@string/Nameview10"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="441dp" />
-
-    <TextView
-        android:id="@+id/txtNameView9"
-        android:layout_width="55dp"
-        android:layout_height="21dp"
-        android:hint="@string/Nameview"
-        android:text="@string/Nameview9"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="420dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
+        tools:layout_editor_absoluteX="168dp" />
 
     <TextView
         android:id="@+id/txtNameView8"

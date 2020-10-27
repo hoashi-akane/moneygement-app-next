@@ -2,10 +2,10 @@
     <string name="app_name">Moneygement</string>
 
     <string name="NickName">ニックネーム</string>
-    <string name="Name">本名</string>
+    <string name="Name">名前</string>
     <string name="eMail">メールアドレス</string>
     <string name="Member">会員登録</string>
-    <string name="Name">本名</string>
+    <string name="Name">名前</string>
     <string name="NickName">ニックネーム</string>
     <string name="password">パスワード</string>
     <string name="Reverse">戻る</string>
@@ -13,7 +13,7 @@
     <string name="NickName">ニックネーム</string>
     <string name="Nameview">Ｔａｒｏ</string>
     <string name="Nameview2">麻生　太郎</string>
-    <string name="Nameview3">本名</string>
+    <string name="Nameview3">名前</string>
     <string name="Nameview4">ニックネーム</string>
     <string name="Nameview5">メールアドレス</string>
     <string name="NameView6">*******@s.asojuku.ac.jp</string>
@@ -42,5 +42,14 @@
     <string name="month">年　月</string>
     <string name="amountamount">+500円</string>
     <string name="InputHouseholdAccountBook">家計簿登録</string>
+    <string name="Spendingamount">今日の支出額</string>
+    <string name="nameyen">￥1,400</string>
+    <string name="amountamount5">￥1.500</string>
+    <string name="Spending">支出</string>
+    <string name="NameviewName">太郎</string>
+    <string name="NameviewSur">麻生</string>
+    <string name="name">名</string>
+    <string name="surname">姓</string>
+    <string name="confirmpassword">確認用パスワード</string>
 
 </resources>
