@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DispSavingshistoryActivity">
+    tools:context=".controller.DispSavingsHistoryActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -30,25 +30,22 @@
             android:id="@+id/savingshistory"
             android:layout_width="155dp"
             android:layout_height="38dp"
-            android:text="TextView"
+            android:text="@string/savingshistory"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.435"
             app:layout_constraintStart_toEndOf="@+id/cancel"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/savingshistory" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TableLayout
-        android:layout_width="425dp"
-        android:layout_height="664dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/savingsHistoryList"
+        android:layout_width="410dp"
+        android:layout_height="554dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="1.0">
@@ -131,7 +128,6 @@
             android:layout_height="match_parent" />
 
     </TableLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
