@@ -1,16 +1,14 @@
 package com.example.moneygement;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class DispSavingshistoryActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MemberInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_disp_savingshistory);
-
-
+        setContentView(R.layout.activity_newmember);
     }
 }
