@@ -5,12 +5,9 @@
     <string name="Name">本名</string>
     <string name="eMail">メールアドレス</string>
     <string name="Member">会員登録</string>
-    <string name="Name">本名</string>
     <string name="NickName">ニックネーム</string>
     <string name="password">パスワード</string>
     <string name="Reverse">戻る</string>
-    <string name="NickName">ニックネーム</string>
-    <string name="NickName">ニックネーム</string>
     <string name="Nameview">Ｔａｒｏ</string>
     <string name="Nameview2">麻生　太郎</string>
     <string name="Nameview3">本名</string>
@@ -41,6 +38,8 @@
     <string name="january">2020年　1月</string>
     <string name="month">年　月</string>
     <string name="amountamount">+500円</string>
+    <string name="Logoutbtn">ログアウト</string>
+    <string name="yesbtn">はい</string>
+    <string name="nobtn">いいえ</string>
     <string name="householdaccountbook">家計簿登録</string>
-    <string name="category">カテゴリー</string>
 </resources>
