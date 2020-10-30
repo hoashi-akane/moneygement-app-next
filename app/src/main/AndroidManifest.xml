@@ -17,12 +17,8 @@
         <activity android:name=".DispCalendarIncomeHouseholdAccountBookActivity" />
         <activity android:name=".InputIncomeHouseholdAccountBookActivity" />
         <activity android:name=".DispHouseholdAccountBookActivity" />  
-        <activity android:name=".controller.DispSavingsHistoryActivity">
-        <activity android:name=".NewMemberConfirmActivity"></activity>
-        <activity android:name=".NewMemberActivity">
-          
-        <activity android:name=".DispSavingshistoryActivity" />
-        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".controller.DispSavingsHistoryActivity" />
+        <activity android:name=".NewMemberActivity" />
         <activity android:name=".SecondActivity" />
           
         <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
