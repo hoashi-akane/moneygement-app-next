@@ -5,8 +5,6 @@
     <string name="Name">名前</string>
     <string name="eMail">メールアドレス</string>
     <string name="Member">会員登録</string>
-
-    <string name="NickName">ニックネーム</string>
     <string name="password">パスワード</string>
     <string name="Reverse">戻る</string>
     <string name="Nameview">Ｔａｒｏ</string>
