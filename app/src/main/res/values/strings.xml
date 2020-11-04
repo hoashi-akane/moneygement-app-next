@@ -27,7 +27,6 @@
     <string name="saving">金額</string>
     <string name="Amountofmoney">金額</string>
     <string name="receipt">レシート</string>
-    <string name="category">カテゴリー</string>
     <string name="memo">メモ</string>
     <string name="tocontinue">続けて記入</string>
     <string name="spendingRegistration">支出登録</string>
@@ -53,4 +52,15 @@
     <string name="yesbtn">はい</string>
     <string name="nobtn">いいえ</string>
     <string name="householdaccountbook">家計簿登録</string>
+    <string name="totalassets">総資産額 ¥100,000</string>
+    <string name="Incomeamount">収入額 ¥30,000</string>
+    <string name="spendingamount">支出額 ¥5,000</string>
+    <string name="householdaccountbookamount">支出：1,000</string>
+    <string name="householdaccountbookIncome">収入：3,000</string>
+    <string-array name="list">
+        <item>家計簿1</item>
+        <item>家計簿2</item>
+        <item>家計簿4</item>
+        <item>家計簿3</item>
+    </string-array>
 </resources>
