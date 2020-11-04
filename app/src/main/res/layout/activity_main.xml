@@ -25,7 +25,7 @@
             android:layout_height="30dp"
             android:text="家計簿"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.055"
@@ -39,7 +39,7 @@
             android:layout_height="30dp"
             android:text="グラフ"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.281"
@@ -53,7 +53,7 @@
             android:layout_height="30dp"
             android:text="貯金"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.534"
@@ -67,7 +67,7 @@
             android:layout_height="30dp"
             android:text="共有"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.767"
@@ -122,7 +122,7 @@
 
         <ImageButton
             android:id="@+id/imageButton8"
-            android:layout_width="70dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:background="@null"
@@ -135,18 +135,34 @@
             app:layout_constraintVertical_bias="0.2"
             app:srcCompat="@mipmap/img13" />
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="ブログ"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
         <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.576"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:srcCompat="@mipmap/img2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:srcCompat="@mipmap/img9" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -160,8 +176,8 @@
 
         <ImageView
             android:id="@+id/imageArea"
-            android:layout_width="718dp"
-            android:layout_height="741dp"
+            android:layout_width="18dp"
+            android:layout_height="41dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.933"
@@ -198,20 +214,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.25"
             app:srcCompat="@mipmap/img9" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:text="ブログ"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.963"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
