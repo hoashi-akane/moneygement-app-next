@@ -53,4 +53,12 @@
     <string name="yesbtn">はい</string>
     <string name="nobtn">いいえ</string>
     <string name="householdaccountbook">家計簿登録</string>
+
+    <string-array name="spinnerlist">
+        <item>給料</item>
+        <item>お小遣い</item>
+        <item>仕送り</item>
+        <item>年金</item>
+        <item>その他</item>
+    </string-array>
 </resources>
