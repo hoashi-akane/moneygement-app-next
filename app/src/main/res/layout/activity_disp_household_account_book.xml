@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".DispHouseholdAccountBookActivity">
 
+    <TableRow
+        android:layout_width="406dp"
+        android:layout_height="95dp"
+        android:background="#f5f5f5"
+        android:elevation="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp">
+
+        <TextView
+            android:id="@+id/spending"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:text="TextView"
+            android:textSize="22sp"
+            tools:text="@string/Spending" />
+
+        <TextView
+            android:id="@+id/amountamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/electrolize"
+            android:paddingLeft="70dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="TextView"
+            android:textColor="#009688"
+            android:textSize="36sp"
+            tools:text="@string/amountamount5" />
+
+    </TableRow>
 </androidx.constraintlayout.widget.ConstraintLayout>
