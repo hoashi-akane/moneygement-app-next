@@ -5,21 +5,18 @@
     <string name="Name">名前</string>
     <string name="eMail">メールアドレス</string>
     <string name="Member">会員登録</string>
-<<<<<<< Updated upstream
-
-    <string name="NickName">ニックネーム</string>
     <string name="password">パスワード</string>
-    <string name="Reverse">戻る</string>
+  
+  <string name="Reverse">戻る</string>
     <string name="Nameview">Ｔａｒｏ</string>
-=======
     <string name="Name2">名前</string>
     <string name="NickName2">ニックネーム</string>
     <string name="password">パスワード</string>
     <string name="Reverse">戻る</string>
     <string name="NickName3">ニックネーム</string>
     <string name="NickName4">ニックネーム</string>
->>>>>>> Stashed changes
-    <string name="Nameview2">麻生　太郎</string>
+
+  <string name="Nameview2">麻生　太郎</string>
     <string name="Nameview3">名前</string>
     <string name="Nameview4">ニックネーム</string>
     <string name="Nameview5">メールアドレス</string>
@@ -66,4 +63,12 @@
     <string name="yesbtn">はい</string>
     <string name="nobtn">いいえ</string>
     <string name="householdaccountbook">家計簿登録</string>
+
+    <string-array name="spinnerlist">
+        <item>給料</item>
+        <item>お小遣い</item>
+        <item>仕送り</item>
+        <item>年金</item>
+        <item>その他</item>
+    </string-array>
 </resources>
