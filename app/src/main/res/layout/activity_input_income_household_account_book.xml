@@ -124,13 +124,12 @@
                 android:paddingBottom="10dp"
                 android:text="@string/category"
                 android:textSize="14sp" />
-            <EditText
-                android:id="@+id/textcategory"
-                android:layout_width="171dp"
-                android:layout_height="55dp"
-                android:background="#00000000"
-                android:ems="10"
-                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:entries=" @array/spinnerlist" />
         </TableRow>
         <View
             android:layout_height="2dip"
