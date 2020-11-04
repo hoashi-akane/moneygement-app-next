@@ -39,7 +39,7 @@ public class InputIncomeHouseholdAccountBookActivity extends AppCompatActivity {
         EditText textPersonName = (EditText)findViewById(R.id.editTextTextPersonName);
         Spinner textcategory = (Spinner) findViewById(R.id.spinnerCategory);
         //インテント生成
-        Intent intent  = new Intent(InputIncomeHouseholdAccountBookActivity.this, MainActivity,class);
+        Intent intent  = new Intent(InputIncomeHouseholdAccountBookActivity.this, MainActivity.class);
 
         //エディットテキストの文字を取得する
 
