@@ -39,6 +39,7 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
                 .first(1)
                 .last(10)
                 .build()
+
             savingsHistoryList = SavingsDetails().getSavingsHistory(savingsDetailsQuery)
             updateData()
             viewAdapter.notifyDataSetChanged()

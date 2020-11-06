@@ -77,7 +77,6 @@
         <item>年金</item>
         <item>その他</item>
     </string-array>
-
     <string-array name="Expenselist">
         <item>食費</item>
         <item>家賃</item>
@@ -92,4 +91,5 @@
         <item>旅費</item>
         <item>その他</item>
     </string-array>
+    <string name="category">家計簿</string>
 </resources>
