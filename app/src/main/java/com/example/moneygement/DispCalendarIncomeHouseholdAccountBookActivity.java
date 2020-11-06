@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 
@@ -46,5 +47,16 @@ public class DispCalendarIncomeHouseholdAccountBookActivity extends AppCompatAct
             }
         };
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Button topButton = (Button)findViewById(R.id.topbutton);
+        topButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DispCalendarIncomeHouseholdAccountBookActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 }

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -12,7 +15,7 @@ import com.example.moneygement.controller.MainActivity;
 
 import org.w3c.dom.Text;
 
-public class InputIncomeHouseholdAccountBookActivity extends AppCompatActivity {
+public class InputIncomeHouseholdAccountBookActivity  extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,14 @@ public class InputIncomeHouseholdAccountBookActivity extends AppCompatActivity {
             intent.putExtra("cotegory",category);
         }
         startActivity(intent);
+
+        Button continueButton = (Button)findViewById(R.id.tocontinue);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InputIncomeHouseholdAccountBookActivity.this,InputIncomeHouseholdAccountBookActivity.class);
+            }
+        });
 
     }
 }
