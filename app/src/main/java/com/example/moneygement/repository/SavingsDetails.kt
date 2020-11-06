@@ -29,7 +29,6 @@ class SavingsDetails: GraphqlBase() {
             }
 //          取る値があれば値を取ってくる
             if(response.hasErrors()){
-
                 return@launch
             }
         }
@@ -47,7 +46,7 @@ class SavingsDetails: GraphqlBase() {
                 return@launch
             }
 //            値を取る
-            result = response.data?.savingsDetails()
+            result = response.data?.saving()?.savingsDetails()
 
             if(result == null || response.hasErrors()){
                 return@launch

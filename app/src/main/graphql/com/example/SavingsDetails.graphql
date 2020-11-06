@@ -17,11 +17,12 @@ query savingsDetails(
     $first: Int!
     $last: Int!
 ){
-  savingsDetails(input:{
-    savings_id: $savings_id
-    first: $first
-    last: $last
-  })
+  saving{
+      savingsDetails(input:{
+        savings_id: $savings_id
+        first: $first
+        last: $last
+      })
   {
     id
     saving_id
@@ -29,4 +30,5 @@ query savingsDetails(
     note
     saving_date
   }
+}
 }
