@@ -70,11 +70,25 @@
         <item>家計簿4</item>
         <item>家計簿3</item>
     </string-array>  
-    <string-array name="spinnerlist">
+    <string-array name="Incomelist">
         <item>給料</item>
         <item>お小遣い</item>
         <item>仕送り</item>
         <item>年金</item>
+        <item>その他</item>
+    </string-array>
+    <string-array name="Expenselist">
+        <item>食費</item>
+        <item>家賃</item>
+        <item>水道光熱費</item>
+        <item>交通費</item>
+        <item>通信料</item>
+        <item>医療費</item>
+        <item>日用品</item>
+        <item>ファッション</item>
+        <item>美容</item>
+        <item>趣味</item>
+        <item>旅費</item>
         <item>その他</item>
     </string-array>
     <string name="category">家計簿</string>
