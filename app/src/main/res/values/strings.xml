@@ -77,4 +77,5 @@
         <item>年金</item>
         <item>その他</item>
     </string-array>
+    <string name="category">家計簿</string>
 </resources>
