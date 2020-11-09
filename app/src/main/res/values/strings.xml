@@ -20,7 +20,7 @@
     <string name="NameView6">*******@s.asojuku.ac.jp</string>
     <string name="Nameview7">貯金額</string>
     <string name="Nameview8">￥10,800</string>
-    <string name="Nameview9">会員ID</string>
+    <string name="Nameview9">目標貯金額</string>
     <string name="Nameview10">Taro0204</string>
     <string name="Login">ログイン</string>
     <string name="id">会員ID</string>
@@ -71,6 +71,10 @@
         <item>家計簿3</item>
     </string-array>
     <string-array name="Incomelist">
+    <string name="Nameview12">￥20,000</string>
+    <string name="change">変更</string>
+
+    <string-array name="spinnerlist">
         <item>給料</item>
         <item>お小遣い</item>
         <item>仕送り</item>
