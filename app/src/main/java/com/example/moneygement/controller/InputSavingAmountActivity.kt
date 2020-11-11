@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.InsertSavingsDetailsMutation
 import com.example.moneygement.R
 import com.example.moneygement.repository.SavingsDetails
-import java.text.SimpleDateFormat
 
 class InputSavingAmountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +20,9 @@ class InputSavingAmountActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val dateOutput = findViewById<View>(R.id.date) as TextView
-        val tocontinuebutton = findViewById<View>(R.id.tocontinue) as Button
+        val continueBtn = findViewById<View>(R.id.tocontinue) as Button
         val cancelbutton = findViewById<View>(R.id.cancel) as Button
-        val saveButton = findViewById<Button>(R.id.savubutton)
+        val saveButton = findViewById<Button>(R.id.savebutton)
 
         //日付の受け取り
         val rIntent = intent
@@ -58,7 +57,7 @@ class InputSavingAmountActivity : AppCompatActivity() {
         }
 
         //続けて記入ボタン
-        tocontinuebutton.setOnClickListener {
+        continueBtn.setOnClickListener {
             val intent = Intent(this@InputSavingAmountActivity, DispCalendarActivity::class.java)
             startActivity(intent)
         }

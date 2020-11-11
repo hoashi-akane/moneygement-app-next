@@ -32,14 +32,13 @@
             android:id="@+id/savingshistory "
             android:layout_width="155dp"
             android:layout_height="38dp"
-            android:text="TextView"
+            android:text="@string/spendingRegistration"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.358"
             app:layout_constraintStart_toEndOf="@+id/cancel"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/spendingRegistration" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -80,8 +79,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#F1EFEF"
-                android:text="角丸(10dp)"
-                tools:text="@string/returntop" />
+                android:text="@string/returntop" />
         </TableRow>
 
 

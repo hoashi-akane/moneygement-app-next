@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.moneygement.R
+import com.example.moneygement.RMerging can be performed automatically.
+￼ Merge pull request
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,32 +20,32 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn1 = findViewById<ImageButton>(R.id.imageButton5);
         ibtn1.setOnClickListener{
-            var i = Intent(this@MainActivity, DispHouseholdAccountBookActivity::class.java);
+            var i = Intent(this@MainActivity, DispLedgerActivity::class.java);
             startActivity(i);
-            };
+        };
 
         var ibtn2 = findViewById<ImageButton>(R.id.imageButton6);
         ibtn2.setOnClickListener{
                 var i= Intent(this@MainActivity,DispLedgerGraphActivity::class.java);
                 startActivity(i);
-            };
+        };
 
         var ibtn3 = findViewById<ImageButton>(R.id.imageButton7);
             ibtn3.setOnClickListener{
-                    var i= Intent(this@MainActivity,DispSavingsHistoryActivity::class.java);
-                    startActivity(i);
-                };
+                var i= Intent(this@MainActivity,DispCalendarActivity::class.java);
+                startActivity(i);
+        };
 
         var ibtn4 = findViewById<ImageButton>(R.id.imageButton8);
             ibtn4.setOnClickListener {
-                    var i= Intent(this@MainActivity,InputSpendingExpenseAmountActivity::class.java);
-                                startActivity(i);
-                        };
+                var i= Intent(this@MainActivity,InputSpendingExpenseAmountActivity::class.java);
+                startActivity(i);
+        };
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9);
-                        ibtn5.setOnClickListener{
-                    var i= Intent(this@MainActivity, DispBlogActivity::class.java);
-                                startActivity(i);
-                            };
+//        ibtn5.setOnClickListener{
+//            var i= Intent(this@MainActivity,DispBlogActivity::class.java);
+//            startActivity(i);
+//        };
 
         val targetAmount = 0;
 

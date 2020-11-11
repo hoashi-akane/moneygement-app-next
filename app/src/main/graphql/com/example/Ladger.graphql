@@ -1,0 +1,45 @@
+query ledger(
+    $id: Int!
+){
+    ledger{
+        ledger(id: $id){
+            id
+            adviserId
+            name
+            created_at
+            incomes{
+                id
+                category{
+                    Id
+                    Name
+                }
+                date
+                amount
+                note
+            }
+            expenses{
+                id
+                category{
+                    Id
+                    Name
+                }
+                date
+                amount
+                note
+            }
+        }
+    }
+}
+
+query ledgers(
+    $userId: Int!
+){
+    ledger{
+        ledgers(userId: $userId){
+            id
+            adviserId
+            name
+            created_at
+        }
+    }
+}
