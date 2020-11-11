@@ -92,6 +92,12 @@
         <item>その他</item>
     </string-array>
     <string name="category">家計簿</string>
+
+    <string name="貯金額">目標貯金額</string>
+    <string name="現在の貯金額">現在の貯金額</string>
+    <string name="targetamount">¥0000</string>
+    <string name="savingAmount">¥0000</string>
     <string name="income">収入</string>
     <string name="graph">グラフ</string>
+
 </resources>
