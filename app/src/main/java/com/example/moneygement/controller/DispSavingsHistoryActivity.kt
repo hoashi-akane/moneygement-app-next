@@ -1,6 +1,8 @@
 package com.example.moneygement.controller
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +51,12 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        val cancelBtn = findViewById<View>(R.id.cancel)
+        cancelBtn.setOnClickListener{
+            val intent = Intent(this@DispSavingsHistoryActivity, DispCalendarActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun updateData(){
