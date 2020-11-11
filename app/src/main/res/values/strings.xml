@@ -92,4 +92,6 @@
         <item>その他</item>
     </string-array>
     <string name="category">家計簿</string>
+    <string name="income">収入</string>
+    <string name="graph">グラフ</string>
 </resources>
