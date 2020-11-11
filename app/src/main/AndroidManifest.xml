@@ -13,28 +13,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MemberInfoReviseActivity" />
-        <activity android:name=".DispCalendarIncomeHouseholdAccountBookActivity" />
-        <activity android:name=".InputIncomeHouseholdAccountBookActivity" />
-        <activity android:name=".DispHouseholdAccountBookActivity" />
-        <activity android:name=".controller.DispSavingsHistoryActivity"></activity>
-        <activity android:name=".NewMemberActivity" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
-        <activity android:name=".controller.DispExpensesCalendarActivity" />
-        <activity android:name=".controller.InputSavingAmountActivity" />
-        <activity android:name=".controller.DispCalendarActivity"></activity>
-        <activity android:name=".controller.MainActivity"></activity>
+       
+      <activity android:name=".controller.DispSavingsHistoryActivity"></activity>       
+      <activity android:name=".controller.MemberInfoReviseActivity"></activity>
+      <activity android:name=".controller.DispCalendarIncomeHouseholdAccountBookActivity" />
+      <activity android:name=".controller.InputIncomeHouseholdAccountBookActivity" />
+      <activity android:name=".controller.DispLedgerActivity">
+      </activity>
+      <activity android:name=".controller.DispSavingsHistoryActivity">
+      </activity>
+      <activity android:name=".controller.NewMemberActivity" />
+      <activity android:name=".controller.SecondActivity" />
 
-        <activity android:name=".controller.DispLedgerGraphActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+      <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
+      <activity android:name=".controller.DispExpensesCalendarActivity" />
+      <activity android:name=".controller.InputSavingAmountActivity" />
+      <activity android:name=".controller.DispCalendarActivity">
+      </activity>
+      <activity android:name=".controller.MainActivity">
+        <intent-filter>
+          <action android:name="android.intent.action.MAIN"/>
+          <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+      </activity>
+      <activity android:name=".controller.DispLedgerGraphActivity">
+
+      </activity>
+
+      <meta-data
+          android:name="preloaded_fonts"
+          android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 
-import com.example.moneygement.controller.MainActivity;
+import com.example.moneygement.R;
 
-public class DispCalenderHouseholdAccountBookActivity extends AppCompatActivity {
+public class DispCalenderLedgerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class DispCalenderHouseholdAccountBookActivity extends AppCompatActivity 
 
             //インテント生成
             Intent intent = new Intent
-                    (DispCalenderHouseholdAccountBookActivity.this,InputIncomeHouseholdAccountBookActivity.class);
+                    (DispCalenderLedgerActivity.this,InputIncomeHouseholdAccountBookActivity.class);
             //年月日を受け渡す
             intent.putExtra("expenseYear",expenseYear);
             intent.putExtra("expenseMonth",expenseMonth);
@@ -52,7 +52,7 @@ public class DispCalenderHouseholdAccountBookActivity extends AppCompatActivity 
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DispCalenderHouseholdAccountBookActivity.this, MainActivity.class);
+                Intent intent = new Intent(DispCalenderLedgerActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

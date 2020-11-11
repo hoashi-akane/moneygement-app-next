@@ -1,19 +1,16 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.moneygement.controller.MainActivity;
-
-import org.w3c.dom.Text;
+import com.example.moneygement.R;
 
 public class InputHouseholdAccountBookActivity  extends AppCompatActivity{
 

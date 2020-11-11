@@ -31,18 +31,11 @@ class DispCalendarActivity : AppCompatActivity() {
          * @param month タップされた日付の「月」※月は0月から始まるから、+1して調整が必要
          * @param dayOfMonth タップされた日付の「日」
          */
-        /**
-         * 日付部分タップ時に実行される処理
-         * @param view 押下されたカレンダーのインスタンス
-         * @param year タップされた日付の「年」
-         * @param month タップされた日付の「月」※月は0月から始まるから、+1して調整が必要
-         * @param dayOfMonth タップされた日付の「日」
-         */
+        val insertMonth = month + 1
         val intent = Intent(this@DispCalendarActivity, InputSavingAmountActivity::class.java)
-        val checkDay = year.toString() + '年' + month.toString() + '月' + dayOfMonth.toString() + '日'
+        val checkDay = year.toString() + '年' + insertMonth.toString() + '月' + dayOfMonth.toString() + '日'
         intent.putExtra("checkday", checkDay)
         startActivity(intent)
-        // TODO:
 
 
         // 引数の year, month, dayOfMonthを利用して、DBから予定表を取得
@@ -53,6 +46,24 @@ class DispCalendarActivity : AppCompatActivity() {
         super.onResume()
         val button = findViewById<View>(R.id.topbutton) as Button
         button.setOnClickListener {
+            val intent = Intent(this@DispCalendarActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        val expensesBtn = findViewById<View>(R.id.expenses) as Button
+        expensesBtn.setOnClickListener{
+            val intent = Intent(this@DispCalendarActivity, DispExpensesCalendarActivity::class.java)
+            startActivity(intent)
+        }
+
+        val historyBtn = findViewById<View>(R.id.history) as Button
+        historyBtn.setOnClickListener{
+            val intent = Intent(this@DispCalendarActivity, DispSavingsHistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        val cancelBtn = findViewById<View>(R.id.cancel) as Button
+        cancelBtn.setOnClickListener{
             val intent = Intent(this@DispCalendarActivity, MainActivity::class.java)
             startActivity(intent)
         }

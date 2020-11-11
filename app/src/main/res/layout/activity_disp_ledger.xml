@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.example.moneygement.viewmodel.LedgerViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DispHouseholdAccountBookActivity">
+    tools:context=".controller.DispLedgerActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -56,20 +62,25 @@
         android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:entries="@array/list"
+        android:entries="@{vm.ledgerNameList}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintVertical_bias="0.087"
+        />
 
     <LinearLayout
         android:layout_width="121dp"
         android:layout_height="46dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="288dp"
-        tools:layout_editor_absoluteY="2dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/inomeHouseHold"
@@ -203,3 +214,4 @@
             android:layout_height="match_parent" />
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,8 +1,10 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.moneygement.R;
 
 public class MemberInfoActivity extends AppCompatActivity {
 

@@ -145,7 +145,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/savubutton"
+        android:id="@+id/savebutton"
         android:layout_width="127dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
