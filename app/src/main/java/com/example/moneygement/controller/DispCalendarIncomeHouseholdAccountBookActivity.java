@@ -1,4 +1,4 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import com.example.moneygement.R;
 
+import com.example.moneygement.controller.InputIncomeHouseholdAccountBookActivity;
 import com.example.moneygement.controller.MainActivity;
 
 import java.util.Calendar;
@@ -35,7 +37,7 @@ public class DispCalendarIncomeHouseholdAccountBookActivity extends AppCompatAct
 
             //インテント生成
             Intent intent = new Intent
-                    (DispCalendarIncomeHouseholdAccountBookActivity.this,InputIncomeHouseholdAccountBookActivity.class);
+                    (DispCalendarIncomeHouseholdAccountBookActivity.this, InputIncomeHouseholdAccountBookActivity.class);
             //年月日を受け渡す
             intent.putExtra("incomeYear",incomeYear);
             intent.putExtra("incomeMonth",incomeMonth);

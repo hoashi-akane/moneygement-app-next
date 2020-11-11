@@ -150,7 +150,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageButton9"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -185,23 +185,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.126" />
-
-        <ImageView
-            android:id="@+id/imageArea"
-            android:layout_width="18dp"
-            android:layout_height="41dp"
-            app:srcCompat="@mipmap/img9"
-            tools:layout_editor_absoluteX="464dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitXY"
-            app:srcCompat="@mipmap/img9"
-            tools:layout_editor_absoluteX="435dp" />
 
         <TextView
             android:id="@+id/textView16"
@@ -243,7 +226,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/目標貯金額"
+            android:text="@string/貯金額"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.007"

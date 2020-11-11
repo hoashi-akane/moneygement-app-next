@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.example.LedgersQuery
+import com.example.moneygement.controller.DispCalendarIncomeHouseholdAccountBookActivity
 import com.example.moneygement.R
 import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.repository.Ledger
@@ -48,6 +49,7 @@ class DispLedgerActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
         val incomeButton = findViewById<View>(R.id.inomeHouseHold) as Button
         incomeButton.setOnClickListener {
             val intent = Intent(this@DispLedgerActivity, DispCalendarIncomeHouseholdAccountBookActivity::class.java)
