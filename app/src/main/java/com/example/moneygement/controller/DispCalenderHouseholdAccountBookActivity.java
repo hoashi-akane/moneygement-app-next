@@ -13,37 +13,35 @@ import com.example.moneygement.controller.MainActivity;
 
 import java.util.Calendar;
 
-public class DispCalendarIncomeHouseholdAccountBookActivity extends AppCompatActivity {
+public class DispCalenderHouseholdAccountBookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_disp_calendar_income_household_account_book);
+        setContentView(R.layout.activity_disp_calender_household_account_book);
         //CalenderViewにリスナーを設定
         ((CalendarView) findViewById(R.id.calendarview)).setOnDateChangeListener(listener);
     }
 
-
-
-
     CalendarView.OnDateChangeListener listener = new CalendarView.OnDateChangeListener() {
         @Override
         public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-            Integer incomeYear = year;
-            Integer incomeMonth = month+1;
-            Integer incomeDay = dayOfMonth;
+            Integer expenseYear = year;
+            Integer expenseMonth = month+1;
+            Integer expenseDay = dayOfMonth;
 
             //インテント生成
             Intent intent = new Intent
-                    (DispCalendarIncomeHouseholdAccountBookActivity.this,InputIncomeHouseholdAccountBookActivity.class);
+                    (DispCalenderHouseholdAccountBookActivity.this,InputHouseholdAccountBookActivity.class);
             //年月日を受け渡す
-            intent.putExtra("incomeYear",incomeYear);
-            intent.putExtra("incomeMonth",incomeMonth);
-            intent.putExtra("incomeDay",incomeDay);
+            intent.putExtra("expenseYear",expenseYear);
+            intent.putExtra("expenseMonth",expenseMonth);
+            intent.putExtra("expenseDay",expenseDay);
 
             startActivity(intent);
         }
     };
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -51,7 +49,7 @@ public class DispCalendarIncomeHouseholdAccountBookActivity extends AppCompatAct
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DispCalendarIncomeHouseholdAccountBookActivity.this,MainActivity.class);
+                Intent intent = new Intent(DispCalenderHouseholdAccountBookActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
