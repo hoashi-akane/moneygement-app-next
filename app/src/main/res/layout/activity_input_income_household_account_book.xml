@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputIncomeHouseholdAccountBookActivity">
+    tools:context=".controller.InputIncomeHouseholdAccountBookActivity">
 
     <TextView
         android:id="@+id/date"
@@ -137,7 +137,7 @@
             android:background="#FF909090" />
     </TableLayout>
     <Button
-        android:id="@+id/savubutton"
+        android:id="@+id/savebutton"
         android:layout_width="127dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"

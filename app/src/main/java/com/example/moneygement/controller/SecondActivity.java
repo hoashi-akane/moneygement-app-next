@@ -1,8 +1,10 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.moneygement.R;
 
 public class SecondActivity extends AppCompatActivity {
 

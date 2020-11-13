@@ -1,4 +1,4 @@
-package com.example.moneygement;
+package com.example.moneygement.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.example.moneygement.R;
 
 public class ChatActivity extends AppCompatActivity {
     private EditText editText;

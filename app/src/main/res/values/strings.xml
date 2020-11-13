@@ -59,9 +59,9 @@
     <string name="yesbtn">はい</string>
     <string name="nobtn">いいえ</string>
     <string name="householdaccountbook">家計簿登録</string>
-    <string name="totalassets">総資産額 ¥100,000</string>
-    <string name="Incomeamount">収入額 ¥30,000</string>
-    <string name="spendingamount">支出額 ¥5,000</string>
+    <string name="totalassets">総資産額</string>
+    <string name="Incomeamount">収入額</string>
+    <string name="spendingamount">支出額</string>
     <string name="householdaccountbookamount">支出：1,000</string>
     <string name="householdaccountbookIncome">収入：3,000</string>
     <string-array name="list">
@@ -92,8 +92,14 @@
         <item>その他</item>
     </string-array>
     <string name="category">家計簿</string>
+
+    <string name="貯金額">目標貯金額</string>
+    <string name="現在の貯金額">現在の貯金額</string>
+    <string name="targetamount">¥0000</string>
+    <string name="savingAmount">¥0000</string>
     <string name="income">収入</string>
     <string name="graph">グラフ</string>
+  
     <string name="signin">Sign in</string>
     <string name="loginid">id</string>
     <string name="loginpassword">password</string>
