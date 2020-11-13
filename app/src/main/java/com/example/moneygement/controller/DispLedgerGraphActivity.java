@@ -2,8 +2,11 @@ package com.example.moneygement.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.DropBoxManager;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.moneygement.R;
 import com.github.mikephil.charting.charts.PieChart;
@@ -19,6 +22,10 @@ public class DispLedgerGraphActivity extends AppCompatActivity {
 
     float rainfall[] = {98.8f, 123.8f, 34.6f, 43.9f, 69.4f};
     String monthNames[] = {"食費", "趣味", "光熱費", "交通費", "日用品"};
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,5 +53,14 @@ public class DispLedgerGraphActivity extends AppCompatActivity {
         PieChart piechart2 = (PieChart) findViewById(R.id.chart2);
         piechart2.setData(data);
         piechart2.invalidate();
+
+        Button cancel = (Button)findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DispLedgerGraphActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
