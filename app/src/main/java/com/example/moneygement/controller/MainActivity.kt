@@ -3,6 +3,7 @@ package com.example.moneygement.controller
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneygement.R
@@ -46,13 +47,24 @@ class MainActivity : AppCompatActivity() {
 //            startActivity(i);
 //        };
 
-        val targetAmount = 0
+        val targetAmount = 80000
+        val savingAmount = 1000
 
-        var textView = findViewById<TextView>(R.id.textView15)
-        textView.text = targetAmount.toString()
+        var textView1 = findViewById<TextView>(R.id.textView15)
+        textView1.text = "¥" + targetAmount.toString()
 
-         //   val savingAmount = 0;
-         //   val targetAmount = 0;
+        var textView2 = findViewById<TextView>(R.id.textView16)
+        textView2.text = "¥" + savingAmount.toString()
+
+        val imageView2 = findViewById<ImageView>(R.id.imageView2)
+        val level = savingAmount / targetAmount
+        when {
+            level < 0.5 -> imageView2.setImageResource(R.mipmap.level1)
+            level < 1 -> imageView2.setImageResource(R.mipmap.level1)
+            level == 1 -> imageView2.setImageResource(R.mipmap.level1)
+        }
+
+
 
         //if()
 
