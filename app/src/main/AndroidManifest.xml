@@ -16,9 +16,9 @@
        
       <activity android:name=".controller.DispSavingsHistoryActivity"></activity>       
       <activity android:name=".controller.MemberInfoReviseActivity"></activity>
-      <activity android:name=".controller.DispCalendarIncomeHouseholdAccountBookActivity" />
+      <activity android:name=".controller.DispCalendarIncomeLedgerActivity" />
       <activity android:name=".controller.InputIncomeHouseholdAccountBookActivity" />
-      <activity android:name=".controller.DispCalenderLedgerActivity"/>
+      <activity android:name=".controller.DispCalenderExpensesLedgerActivity"/>
       <activity android:name=".controller.DispLedgerActivity">
       </activity>
       <activity android:name=".controller.NewMemberActivity" />
