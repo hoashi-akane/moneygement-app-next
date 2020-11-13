@@ -104,4 +104,5 @@
     <string name="loginid">id</string>
     <string name="loginpassword">password</string>
     <string name="loginbtn">login</string>
+    <string name="signup">新規登録</string>
 </resources>
