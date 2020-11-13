@@ -13,7 +13,7 @@
     <string name="NickName3">ニックネーム</string>
     <string name="NickName4">ニックネーム</string>
 
-  <string name="Nameview2">麻生　太郎</string>
+    <string name="Nameview2">麻生　太郎</string>
     <string name="Nameview3">名前</string>
     <string name="Nameview4">ニックネーム</string>
     <string name="Nameview5">メールアドレス</string>
@@ -69,7 +69,7 @@
         <item>家計簿2</item>
         <item>家計簿4</item>
         <item>家計簿3</item>
-    </string-array>  
+    </string-array>
     <string-array name="Incomelist">
         <item>給料</item>
         <item>お小遣い</item>
@@ -99,5 +99,9 @@
     <string name="savingAmount">¥0000</string>
     <string name="income">収入</string>
     <string name="graph">グラフ</string>
-
+  
+    <string name="signin">Sign in</string>
+    <string name="loginid">id</string>
+    <string name="loginpassword">password</string>
+    <string name="loginbtn">login</string>
 </resources>
