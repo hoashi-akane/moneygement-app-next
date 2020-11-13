@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.moneygement.DispCalendarIncomeHouseholdAccountBookActivity;
 import com.example.moneygement.R;
 import com.google.android.material.textfield.TextInputEditText;
 
