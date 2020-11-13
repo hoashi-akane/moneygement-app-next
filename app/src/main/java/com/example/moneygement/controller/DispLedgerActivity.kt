@@ -3,25 +3,23 @@ package com.example.moneygement.controller
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatSpinner
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import com.example.LedgersQuery
-import com.example.moneygement.controller.DispCalendarIncomeHouseholdAccountBookActivity
 import com.example.moneygement.R
 import com.example.moneygement.databinding.ActivityDispLedgerBinding
-import com.example.moneygement.repository.Ledger
 import com.example.moneygement.viewmodel.LedgerViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import java.text.ParsePosition
 
 
+//家計簿トップ
 class DispLedgerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDispLedgerBinding
 
@@ -31,7 +29,10 @@ class DispLedgerActivity : AppCompatActivity() {
 
         val viewModel :LedgerViewModel by viewModels()
 
-        binding = DataBindingUtil.setContentView<ActivityDispLedgerBinding>(
+        GlobalScope.launch{
+            viewModel.getLedgerList(1)
+        }
+        binding = DataBindingUtil.setContentView(
                 this,
                 R.layout.activity_disp_ledger
         )
@@ -39,12 +40,17 @@ class DispLedgerActivity : AppCompatActivity() {
         binding.vm = viewModel
 
         var ledgerList = listOf<LedgersQuery.Ledger1>()
-        var ledgerListView = findViewById<View>(R.id.list) as Spinner
+        var ledgerListSpinner = findViewById<View>(R.id.list) as Spinner
 
-        GlobalScope.launch{
-            viewModel.getLedgerList(1)
+        ledgerListSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                GlobalScope.launch{
+                    viewModel.listPositionToGetLedgerData(position)
+                }
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
         }
-
     }
 
     override fun onResume() {
@@ -52,12 +58,12 @@ class DispLedgerActivity : AppCompatActivity() {
 
         val incomeButton = findViewById<View>(R.id.inomeHouseHold) as Button
         incomeButton.setOnClickListener {
-            val intent = Intent(this@DispLedgerActivity, DispCalendarIncomeHouseholdAccountBookActivity::class.java)
+            val intent = Intent(this@DispLedgerActivity, DispCalendarIncomeLedgerActivity::class.java)
             startActivity(intent)
         }
         val expenseButton = findViewById<View>(R.id.expenseHouseHold) as Button
         expenseButton.setOnClickListener {
-            val intent = Intent(this@DispLedgerActivity, DispCalenderLedgerActivity::class.java)
+            val intent = Intent(this@DispLedgerActivity, DispCalenderExpensesLedgerActivity::class.java)
             startActivity(intent)
         }
         val cancelButton = findViewById<View>(R.id.cancel) as Button
