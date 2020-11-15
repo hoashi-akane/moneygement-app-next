@@ -12,3 +12,22 @@ query login(
         email
     }
 }
+
+mutation insertUser(
+    $name: String!
+    $nickName: String!
+    $email: String!
+    $password: String!
+){
+    createUser(input:{
+        name: $name
+        nickName: $nickName
+        email: $email
+        password: $password
+    }){
+        id
+        name
+        nickname
+        email
+    }
+}
