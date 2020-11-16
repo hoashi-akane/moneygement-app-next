@@ -11,6 +11,7 @@
         android:layout_width="155dp"
         android:layout_height="21dp"
         android:layout_margin="20dp"
+        android:gravity="center_horizontal"
         android:text="@string/date"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,44 +19,53 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
-        android:gravity="center_horizontal"/>
+        app:layout_constraintVertical_bias="0.128" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="454dp"
-        android:layout_height="40dp"
-        android:background="#D7DEE6"
+        android:layout_width="455dp"
+        android:layout_height="63dp"
+        android:background="#FF799C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
             android:id="@+id/cancel"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="124dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:text="@string/cancel"
+            android:layout_width="69dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:background="#FF799C"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints"
-            tools:text="@string/cancel" />
+            tools:text="←" />
+
         <TextView
             android:id="@+id/savingshistory"
-            android:layout_width="79dp"
-            android:layout_height="26dp"
+            android:layout_width="131dp"
+            android:layout_height="34dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:text="@string/householdaccountbook"
-            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.553"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.717"
+            app:layout_constraintVertical_bias="0.38"
             tools:text="@string/Savingamountregistration" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="353dp"
@@ -70,9 +80,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.537">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="78dp">
+
             <TextView
                 android:id="@+id/Amountofmoney"
                 android:layout_width="65dp"
@@ -81,6 +93,7 @@
                 android:text="@string/Amountofmoney"
                 android:textSize="14sp"
                 tools:text="@string/Amountofmoney" />
+
             <EditText
                 android:id="@+id/editTextNumberSigned"
                 android:layout_width="256dp"
@@ -89,12 +102,15 @@
                 android:ems="10"
                 android:inputType="numberSigned" />
         </TableRow>
+
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:id="@+id/memo"
                 android:layout_width="wrap_content"
@@ -103,6 +119,7 @@
                 android:text="@string/memo"
                 android:textSize="14sp"
                 tools:text="@string/memo" />
+
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="171dp"
@@ -111,9 +128,11 @@
                 android:ems="10"
                 android:inputType="textPersonName" />
         </TableRow>
+
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -132,10 +151,12 @@
                 android:layout_height="45dp"
                 android:entries="@array/Incomelist" />
         </TableRow>
+
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
     </TableLayout>
+
     <Button
         android:id="@+id/savebutton"
         android:layout_width="127dp"
@@ -143,13 +164,17 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="#FF799C"
         android:text="@string/save"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintVertical_bias="0.933" />
+
     <Button
         android:id="@+id/tocontinue"
         android:layout_width="127dp"
@@ -157,7 +182,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="#1BF48DB9"
         android:text="@string/tocontinue"
+        android:textColor="#FF799C"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
