@@ -48,11 +48,20 @@ public class DispCalenderExpensesLedgerActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Button topButton = (Button)findViewById(R.id.topbutton);
+        Button topButton = findViewById(R.id.topbutton);
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DispCalenderExpensesLedgerActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button cancel = findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DispCalenderExpensesLedgerActivity.this, DispLedgerActivity.class);
                 startActivity(intent);
             }
         });

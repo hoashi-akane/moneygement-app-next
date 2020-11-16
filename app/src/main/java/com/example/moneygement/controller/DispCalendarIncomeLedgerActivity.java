@@ -50,5 +50,14 @@ public class DispCalendarIncomeLedgerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button cancel = (Button)findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DispCalendarIncomeLedgerActivity.this,DispLedgerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
