@@ -43,3 +43,13 @@ query ledgers(
         }
     }
 }
+
+mutation createLedger(
+    $userId: Int!
+    $name: String!
+){
+    createLedger(input:{
+        userId: $userId
+        name: $name
+    })
+}
