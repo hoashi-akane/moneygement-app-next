@@ -8,9 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="415dp"
-        android:layout_height="77dp"
-        android:background="#D7DEE6"
+        android:layout_width="455dp"
+        android:layout_height="63dp"
+        android:background="#FF799C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,26 +18,28 @@
         <Button
             android:id="@+id/cancel"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="130dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="24dp"
-            android:text="@string/cancel"
+            android:layout_width="74dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.593"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/savingshistory "
-            android:layout_width="155dp"
-            android:layout_height="38dp"
+            android:layout_width="103dp"
+            android:layout_height="32dp"
             android:text="@string/spendingRegistration"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.358"
-            app:layout_constraintStart_toEndOf="@+id/cancel"
+            app:layout_constraintStart_toStartOf="@+id/cancel"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -55,33 +57,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.318" />
 
-    <TableLayout
-        android:layout_width="409dp"
-        android:layout_height="124dp"
-        android:background="#D7DEE6"
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_width="360dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#1BF48DB9"
+        android:text="@string/returntop"
+        android:textColor="#FF799C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="MissingConstraints">
-
-            <Button
-                android:id="@+id/savebutton"
-                android:layout_width="308dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#F1EFEF"
-                android:text="@string/returntop" />
-        </TableRow>
-
-
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
