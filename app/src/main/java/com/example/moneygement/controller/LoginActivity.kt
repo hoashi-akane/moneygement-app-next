@@ -12,7 +12,6 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.example.moneygement.R
 import com.example.moneygement.model.User
-import com.example.moneygement.repository.AuthRepository
 import com.example.moneygement.repository.UserRepository
 import com.example.moneygement.service.AuthService
 import kotlinx.coroutines.runBlocking
