@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneygement.R
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +46,8 @@ class MainActivity : AppCompatActivity() {
 //            startActivity(i);
 //        };
 
-        val targetAmount = 80000
-        val savingAmount = 1000
+        var targetAmount = 80000
+        var savingAmount = 70000
 
         var textView1 = findViewById<TextView>(R.id.textView15)
         textView1.text = "¥" + targetAmount.toString()
@@ -56,12 +55,18 @@ class MainActivity : AppCompatActivity() {
         var textView2 = findViewById<TextView>(R.id.textView16)
         textView2.text = "¥" + savingAmount.toString()
 
+        val t: Double =targetAmount.toDouble()
+        val s: Double =savingAmount.toDouble()
+
         val imageView2 = findViewById<ImageView>(R.id.imageView2)
-        val level = savingAmount / targetAmount
+        var level = s / t
+        println(savingAmount)
+        println(targetAmount)
+        println(level)
         when {
-            level < 0.5 -> imageView2.setImageResource(R.mipmap.level1)
-            level < 1 -> imageView2.setImageResource(R.mipmap.level1)
-            level == 1 -> imageView2.setImageResource(R.mipmap.level1)
+            level < 0.5 -> imageView2.setImageResource(R.mipmap.`level1`)
+            level < 1.0 -> imageView2.setImageResource(R.mipmap.level2)
+            level == 1.0 -> imageView2.setImageResource(R.mipmap.`level2`)
         }
 
 
