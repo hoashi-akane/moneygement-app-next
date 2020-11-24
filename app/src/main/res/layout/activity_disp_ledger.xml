@@ -14,9 +14,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="375dp"
-        android:layout_height="48dp"
-        android:background="#D7DEE6"
+        android:layout_width="455dp"
+        android:layout_height="63dp"
+        android:background="#FF799C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,33 +25,35 @@
         <Button
             android:id="@+id/cancel"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="107dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="2dp"
+            android:layout_width="78dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="32dp"
             android:layout_marginBottom="2dp"
-            android:text="@string/cancel"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/savingshistory"
-            android:layout_width="79dp"
-            android:layout_height="21dp"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
             android:text="@string/householdaccountbook"
-            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.471"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="@+id/cancel"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.521" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -72,31 +74,36 @@
         />
 
     <LinearLayout
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.01999998">
 
         <Button
             android:id="@+id/inomeHouseHold"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#5A80CD"
             android:text="収入"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF" />
 
         <Button
             android:id="@+id/expenseHouseHold"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#4DDDB5"
             android:text="支出"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView
