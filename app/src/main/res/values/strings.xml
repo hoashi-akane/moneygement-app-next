@@ -70,7 +70,6 @@
         <item>家計簿4</item>
         <item>家計簿3</item>
     </string-array>
-    <string-array name="Incomelist">
     <string name="Nameview12">￥20,000</string>
     <string name="change">変更</string>
 
@@ -125,4 +124,8 @@
     <string name="shareincome">共有家計簿収入登録</string>
     <string name="updateshareincome">共有家計簿収入修正</string>
     <string name="updateshareexpenses">共有家計簿支出修正</string>
+    <string name="adviserlist">アドバイザ一覧</string>
+    <string name="Hoashi">帆足</string>
+    <string name="Evaluation">評価数：３</string>
+    <string name="Ogawa">小川</string>
 </resources>
