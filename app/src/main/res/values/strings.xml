@@ -109,4 +109,5 @@
     <string name="Explanation">1.アドバイザを選択</string>
     <string name="Explanation2">2.アドバイザと家計簿を共有</string>
     <string name="Explanation3">3.チャット機能でアドバイスや質問も可能</string>
+    <string name="shareledger">共有家計簿</string>
 </resources>
