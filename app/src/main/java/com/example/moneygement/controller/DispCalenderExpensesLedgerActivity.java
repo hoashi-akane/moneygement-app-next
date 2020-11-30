@@ -35,7 +35,7 @@ public class DispCalenderExpensesLedgerActivity extends AppCompatActivity {
 
             //インテント生成
             Intent intent = new Intent
-                    (DispCalenderExpensesLedgerActivity.this,InputIncomeHouseholdAccountBookActivity.class);
+                    (DispCalenderExpensesLedgerActivity.this, InputExpenseHouseholdAccountBookActivity.class);
             //年月日を受け渡す
             intent.putExtra("expenseYear",expenseYear);
             intent.putExtra("expenseMonth",expenseMonth);
