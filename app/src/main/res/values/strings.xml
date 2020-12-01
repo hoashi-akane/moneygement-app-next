@@ -113,4 +113,5 @@
     <string name="shareexpenses">共有家計簿支出登録</string>
     <string name="shareincome">共有家計簿収入登録</string>
     <string name="updateshareincome">共有家計簿収入修正</string>
+    <string name="updateshareexpenses">共有家計簿支出修正</string>
 </resources>
