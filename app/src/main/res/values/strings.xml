@@ -105,4 +105,9 @@
     <string name="loginpassword">password</string>
     <string name="loginbtn">login</string>
     <string name="signup">新規登録</string>
+    <string name="advisordetail">アドバイザ詳細</string>
+    <string name="regist">登録</string>
+    <string name="release">解除</string>
+    <string name="selfintroduction">----------------------------------------------------------------------------------------------------------------------------------------------</string>
+    <string name="url">https://moneygement.com/index</string>
 </resources>
