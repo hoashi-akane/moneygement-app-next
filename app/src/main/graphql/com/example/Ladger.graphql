@@ -53,3 +53,35 @@ mutation createLedger(
         name: $name
     })
 }
+
+mutation createIncomeDetail(
+    $ledgerId: Int!
+    $categoryId: Int!
+    $date: Date!
+    $amount: Int!
+    $note: String!
+){
+    createIncomeDetail(input:{
+        ledgerId: $ledgerId
+        categoryId: $categoryId
+        date: $date
+        amount: $amount
+        note: $note
+    })
+}
+
+mutation createExpenseDetail(
+    $ledgerId: Int!
+    $categoryId: Int!
+    $date: Date!
+    $amount: Int!
+    $note: String!
+){
+    createExpenseDetail(input:{
+        ledgerId: $ledgerId
+        categoryId: $categoryId
+        date: $date
+        amount: $amount
+        note: $note
+    })
+}
