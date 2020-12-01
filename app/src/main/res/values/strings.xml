@@ -99,15 +99,21 @@
     <string name="savingAmount">¥0000</string>
     <string name="income">収入</string>
     <string name="graph">グラフ</string>
-  
+
     <string name="signin">Sign in</string>
     <string name="loginid">id</string>
     <string name="loginpassword">password</string>
     <string name="loginbtn">login</string>
     <string name="signup">新規登録</string>
+
     <string name="advisordetail">アドバイザ詳細</string>
     <string name="regist">登録</string>
     <string name="release">解除</string>
     <string name="selfintroduction">----------------------------------------------------------------------------------------------------------------------------------------------</string>
     <string name="url">https://moneygement.com/index</string>
+
+  <string name="introduction">アドバイザ機能紹介</string>
+    <string name="Explanation">1.アドバイザを選択</string>
+    <string name="Explanation2">2.アドバイザと家計簿を共有</string>
+    <string name="Explanation3">3.チャット機能でアドバイスや質問も可能</string>
 </resources>

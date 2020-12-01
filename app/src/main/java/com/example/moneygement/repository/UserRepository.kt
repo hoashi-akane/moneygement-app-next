@@ -10,7 +10,7 @@ import com.example.moneygement.model.User
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class User: GraphqlBase(){
+class UserRepository: GraphqlBase(){
 
     private val apolloClient = super.access()
 
