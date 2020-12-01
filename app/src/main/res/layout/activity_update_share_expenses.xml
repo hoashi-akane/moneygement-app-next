@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.InputExpenseHouseholdAccountBookActivity">
+    tools:context=".controller.UpdateShareExpensesActivity">
 
     <TextView
         android:id="@+id/date"
@@ -48,12 +48,12 @@
 
         <TextView
             android:id="@+id/savingshistory"
-            android:layout_width="129dp"
-            android:layout_height="31dp"
+            android:layout_width="227dp"
+            android:layout_height="38dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/householdaccountbook"
+            android:text="@string/updateshareexpenses"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -173,37 +173,19 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/savebutton"
-        android:layout_width="127dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FF799C"
-        android:text="@string/save"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
-
-    <Button
         android:id="@+id/tocontinue"
-        android:layout_width="127dp"
-        android:layout_height="53dp"
+        android:layout_width="346dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="#1BF48DB9"
-        android:text="@string/tocontinue"
+        android:text="@string/save"
         android:textColor="#FF799C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
-
+        app:layout_constraintVertical_bias="0.945" />
 </androidx.constraintlayout.widget.ConstraintLayout>
