@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/sendMessageBtn"
         android:layout_width="74dp"
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
