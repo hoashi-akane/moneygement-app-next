@@ -32,7 +32,6 @@ class LedgerViewModel : ViewModel() {
     suspend fun getLedgerData(id: Int){
         var result = Ledger().getLedger(id)
         var amountList = mutableMapOf<String, String>()
-
         if(result != null) {
             var totalIncomes = totalIncomesAmount(result.incomes())
             var totalExpenses = totalExpensesAmount(result.expenses())
@@ -51,7 +50,7 @@ class LedgerViewModel : ViewModel() {
         var totalIncomeAmount = 0
         incomes.forEach{
             totalIncomeAmount += it.amount()
-    }
+        }
         return totalIncomeAmount
     }
 

@@ -44,6 +44,7 @@ class AuthService : CoroutineScope {
     }
 
     fun checkUserInfo(context: Context): LoginQuery.Login?{
+
         val sharedPreferences = createAuthSharedPreferences(context)
         val email = sharedPreferences.getString("email", "")
         val password = sharedPreferences.getString("password", "")
@@ -54,5 +55,10 @@ class AuthService : CoroutineScope {
         return runBlocking {
             UserRepository().login(email!!, password!!)
         }
+    }
+
+    fun logout(context: Context){
+        val sharedPreferences = context.getSharedPreferences("user_info", 0)
+        sharedPreferences.edit().clear().commit()
     }
 }

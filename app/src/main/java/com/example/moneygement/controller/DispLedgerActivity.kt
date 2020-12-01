@@ -16,12 +16,14 @@ import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.viewmodel.LedgerViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.text.ParsePosition
 
 
 //家計簿トップ
 class DispLedgerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDispLedgerBinding
+    private lateinit var ledgerList: List<LedgersQuery.Ledger1>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +31,9 @@ class DispLedgerActivity : AppCompatActivity() {
 
         val viewModel :LedgerViewModel by viewModels()
 
-        GlobalScope.launch{
+        runBlocking{
             viewModel.getLedgerList(1)
+            ledgerList = viewModel.listItem
         }
         binding = DataBindingUtil.setContentView(
                 this,
@@ -39,7 +42,7 @@ class DispLedgerActivity : AppCompatActivity() {
         binding.lifecycleOwner = this@DispLedgerActivity
         binding.vm = viewModel
 
-        var ledgerList = listOf<LedgersQuery.Ledger1>()
+
         var ledgerListSpinner = findViewById<View>(R.id.list) as Spinner
 
         ledgerListSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -55,15 +58,24 @@ class DispLedgerActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        var ledgerListSpinner = findViewById<View>(R.id.list) as Spinner
+
 
         val incomeButton = findViewById<View>(R.id.inomeHouseHold) as Button
         incomeButton.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
+
             val intent = Intent(this@DispLedgerActivity, DispCalendarIncomeLedgerActivity::class.java)
+//          家計簿IDを渡す
+            intent.putExtra("ledgerId", ledgerList[(index.toInt())].id())
             startActivity(intent)
         }
         val expenseButton = findViewById<View>(R.id.expenseHouseHold) as Button
         expenseButton.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
             val intent = Intent(this@DispLedgerActivity, DispCalenderExpensesLedgerActivity::class.java)
+//          家計簿IDを渡す
+            intent.putExtra("ledgerId", ledgerList[(index.toInt())].id())
             startActivity(intent)
         }
         val cancelButton = findViewById<View>(R.id.cancel) as Button

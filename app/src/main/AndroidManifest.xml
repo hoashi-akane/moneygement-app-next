@@ -29,16 +29,17 @@
       <activity android:name=".controller.InputSavingAmountActivity" />
       <activity android:name=".controller.DispCalendarActivity">
       </activity>
-      <activity android:name=".controller.ChatActivity"/>
+      <activity android:name=".controller.ChatActivity">
+      </activity>
       <activity android:name=".controller.LogoutActivity"/>
-      <activity android:name=".controller.DispCalenderHouseholdAccountBookActivity"/>
-      <activity android:name=".controller.InputHouseholdAccountBookActivity"/>
+      <activity android:name=".controller.InputExpenseHouseholdAccountBookActivity"/>
       <activity android:name=".controller.MainActivity">
         <intent-filter>
           <action android:name="android.intent.action.MAIN"/>
           <category android:name="android.intent.category.LAUNCHER"/>
         </intent-filter>
       </activity>
+      <activity android:name=".controller.LoginActivity"></activity>
       <activity android:name=".controller.DispLedgerGraphActivity">
 
       </activity>
