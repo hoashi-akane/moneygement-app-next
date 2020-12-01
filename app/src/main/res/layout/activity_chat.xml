@@ -7,41 +7,14 @@
     android:background="#f6f6f6"
     tools:context=".controller.ChatActivity">
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="411dp"
-        android:layout_height="59dp"
-        android:background="@color/colorPrimaryDark"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="557dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="622dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-    </TableLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout4"
@@ -51,14 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="1dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <TableRow
             android:layout_width="match_parent"
@@ -77,97 +44,31 @@
                 android:textSize="24sp" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
     </TableLayout>
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="48dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/avatar_3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="307dp" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="48dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/avatar_3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="138dp" />
-
-    <ImageView
-        android:id="@+id/activity_main"
-        android:layout_width="279dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="70dp"
-        android:background="#D5CDCD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
-
-    <ImageView
-        android:id="@+id/activity_second"
-        android:layout_width="285dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="108dp"
-        android:background="#FF799C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
-
-    <ImageView
-        android:id="@+id/activity_third"
-        android:layout_width="220dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="70dp"
-        android:background="#D5CDCD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
-
     <TableRow
+        android:id="@+id/tableRow"
         android:layout_width="413dp"
         android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tableLayout2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout4"
         app:layout_constraintVertical_bias="1.0">
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="48dp"
-            android:layout_height="60dp"
-            android:background="#FF799C"
-            android:padding="5dp"
-            app:srcCompat="@drawable/_72_1726160_add_picture_switch_camera_icon_white_png" />
-
         <EditText
-            android:id="@+id/edit_text"
+            android:id="@+id/sendMessage"
             android:layout_width="306dp"
             android:layout_height="60dp"
             android:background="#ffffff"
             android:hint="@string/hint" />
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="61dp"
+        <ImageButton
+            android:id="@+id/sendMessageBtn"
+            android:layout_width="108dp"
             android:layout_height="63dp"
             android:background="#FF799C"
             android:padding="8dp"
+            android:scaleType="fitXY"
             app:srcCompat="@drawable/send_white_192x192" />
 
     </TableRow>
