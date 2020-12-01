@@ -2,6 +2,8 @@ package com.example.moneygement.repository
 
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
+import com.example.CreateExpenseDetailMutation
+import com.example.CreateIncomeDetailMutation
 import com.example.LedgerQuery
 import com.example.LedgersQuery
 import kotlinx.coroutines.GlobalScope
@@ -53,5 +55,37 @@ class Ledger: GraphqlBase() {
         }
         job.join()
         return ledger
+    }
+
+    fun insertExpense(createExpenseDetailMutation: CreateExpenseDetailMutation){
+
+        GlobalScope.launch {
+
+            val response = try{
+                apolloClient.mutate(createExpenseDetailMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+            if(response.hasErrors()){
+                println("エラー")
+            }
+        }
+    }
+
+    fun insertIncome(createIncomeDetailMutation: CreateIncomeDetailMutation){
+
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(createIncomeDetailMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                println("エラー")
+            }
+        }
     }
 }
