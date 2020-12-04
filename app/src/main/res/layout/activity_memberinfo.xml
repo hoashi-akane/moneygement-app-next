@@ -11,61 +11,87 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="411dp"
-        android:layout_height="105dp"
+        android:layout_width="410dp"
+        android:layout_height="256dp"
         android:background="@color/colorAccent"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
-        android:id="@+id/edit-image"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/img_520307"
-        tools:layout_editor_absoluteX="365dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <ImageView
-        android:id="@+id/icon-image"
+        android:id="@+id/icon_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/edit_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/img_520307"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="114dp" />
 
     <TextView
-        android:id="@+id/txtNameView2"
-        android:layout_width="159dp"
-        android:layout_height="40dp"
-        android:hint="@string/Nameview2"
-        android:text="@string/Nameview2"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="537dp" />
+        android:id="@+id/txtNameView7"
+        android:layout_width="76dp"
+        android:layout_height="29dp"
+        android:hint="@string/Nameview7"
+        android:text="@string/Nameview7"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="165dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txtNameView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:hint="@string/Nameview4"
-        android:text="@string/Nameview4"
-        android:textSize="18sp"
-        android:textStyle="italic"
+        android:id="@+id/txtNameView9"
+        android:layout_width="123dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="236dp"
+        android:hint="@string/Nameview9"
+        android:text="@string/Nameview9"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="472dp" />
+        tools:layout_editor_absoluteY="165dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txtNameView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txtNameView8"
+        android:layout_width="168dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/electrolize"
+        android:hint="@string/Nameview8"
+        android:text="@string/Nameview8"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="196dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView"
+        android:layout_width="183dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/electrolize"
         android:hint="@string/Nameview10"
-        android:text="@string/Nameview10"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="464dp" />
+        android:text="@string/Nameview12"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="196dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/txtNameView3"
@@ -74,34 +100,45 @@
         android:hint="@string/Nameview3"
         android:text="@string/Nameview3"
         android:textSize="18sp"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="548dp" />
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="479dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txtNameView9"
-        android:layout_width="55dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="48dp"
-        android:hint="@string/Nameview9"
-        android:text="@string/Nameview9"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/txtNameView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Nameview10"
+        android:text="@string/Nameview10"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="357dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:hint="@string/Nameview4"
+        android:text="@string/Nameview4"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        tools:layout_editor_absoluteY="370dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/txtNameView5"
-        android:layout_width="129dp"
-        android:layout_height="23dp"
+        android:layout_width="102dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
         android:hint="@string/Nameview5"
         android:text="@string/Nameview5"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="331dp" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/txtNameView6"
@@ -110,42 +147,54 @@
         android:hint="@string/NameView6"
         android:text="@string/NameView6"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="380dp" />
-
-    <TextView
-        android:id="@+id/txtNameView10"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:hint="@string/Nameview10"
-        android:text="@string/Nameview10"
-        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444"
-        tools:layout_editor_absoluteX="168dp" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
-        android:id="@+id/txtNameView8"
+        android:id="@+id/txtView5"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
+        android:hint="@string/Nameview2"
+        android:text="@string/NameviewSur"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="457dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/electrolize"
-        android:hint="@string/Nameview8"
-        android:text="@string/Nameview8"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="185dp" />
+        android:text="TextView"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="470dp"
+        tools:text="@string/surname"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txtNameView7"
-        android:layout_width="89dp"
-        android:layout_height="27dp"
-        android:hint="@string/Nameview7"
-        android:text="@string/Nameview7"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="158dp" />
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="536dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NameviewName"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="527dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
