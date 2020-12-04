@@ -33,17 +33,16 @@
 
         <TextView
             android:id="@+id/introduction"
-            android:layout_width="209dp"
-            android:layout_height="28dp"
+            android:layout_width="231dp"
+            android:layout_height="41dp"
             android:text="@string/introduction"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
             app:layout_constraintStart_toStartOf="@+id/cancel"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.518" />
+            app:layout_constraintVertical_bias="0.529" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -56,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172">
+        app:layout_constraintVertical_bias="0.132">
 
         <TextView
             android:id="@+id/Explanation1"
@@ -92,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451">
+        app:layout_constraintVertical_bias="0.412">
 
         <TextView
             android:id="@+id/Explanation2"
@@ -120,13 +119,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
         android:layout_width="350dp"
         android:layout_height="191dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904">
+        app:layout_constraintVertical_bias="0.788">
 
         <TextView
             android:id="@+id/Explanation3"
@@ -151,7 +152,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@mipmap/original2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/adviserBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF799C"
+        android:text="はじめる"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

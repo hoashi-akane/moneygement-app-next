@@ -1,10 +1,13 @@
 package com.example.moneygement.controller
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moneygement.R
-import kotlinx.android.synthetic.main.activity_advisor_introduction.*
-import androidx.fragment.app.Fragment as Fragment1
 
 class AdvisorIntroductionActivity : AppCompatActivity() {
 
@@ -14,6 +17,21 @@ class AdvisorIntroductionActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        var adviserBtn = findViewById<Button>(R.id.adviserBtn)
+        adviserBtn.setOnClickListener{
+            var i = Intent(this@AdvisorIntroductionActivity, MainActivity::class.java)
+            startActivity(i);
+        };
+
+        var cancel = findViewById<Button>(R.id.cancel)
+        cancel.setOnClickListener{
+            var i = Intent(this@AdvisorIntroductionActivity, MainActivity::class.java)
+            startActivity(i);
+        };
+    }
 
 
 }
