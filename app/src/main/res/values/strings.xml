@@ -122,4 +122,6 @@
     <string name="updateshareincome">共有家計簿収入修正</string>
     <string name="updateshareexpenses">共有家計簿支出修正</string>
     <string name="LedgerChoice">入力画面</string>
+    <string name="ledgername">家計簿名</string>
+    <string name="ladgername">家計簿名</string>
 </resources>
