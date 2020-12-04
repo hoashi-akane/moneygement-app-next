@@ -4,6 +4,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateSavingExpenditureCorrectionActivity">
+    android:background="#FFFFFF"
+    tools:context=".controller.InputSavingAmountActivity">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="155dp"
+        android:layout_height="21dp"
+        android:layout_margin="20dp"
+        android:text="@string/date"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128"
+        android:gravity="center_horizontal"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="454dp"
+        android:layout_height="63dp"
+        android:background="#FF799C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="56dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="16dp"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/savingshistory"
+            android:layout_width="177dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="貯金額支出修正"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <Button
+            android:id="@+id/save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="93dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/save"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.307"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/save" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="324dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="78dp">
+
+            <TextView
+                android:id="@+id/Amountofmoney"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="@string/Amountofmoney"
+                android:textSize="14sp"
+                tools:text="@string/Amountofmoney" />
+
+            <EditText
+                android:id="@+id/money"
+                android:layout_width="256dp"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:ems="10"
+                android:inputType="numberSigned" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/memo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="@string/memo"
+                android:textSize="14sp"
+                tools:text="@string/memo" />
+
+            <EditText
+                android:id="@+id/note"
+                android:layout_width="171dp"
+                android:layout_height="55dp"
+                android:background="#00000000"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+    </TableLayout>
+
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_width="127dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FF799C"
+        android:text="@string/save"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
+
+    <Button
+        android:id="@+id/tocontinue"
+        android:layout_width="127dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#1BF48DB9"
+        android:text="@string/tocontinue"
+        android:textColor="#FF799C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
