@@ -54,11 +54,24 @@
         android:id="@+id/loginbtn"
         android:layout_width="86dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="144dp"
         android:background="#FFFFFF"
         android:text="@string/loginbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="@+id/password" />
+
+    <Button
+        android:id="@+id/newMemberbtn"
+        android:layout_width="86dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="88dp"
+        android:background="#FFFFFF"
+        android:text="新規登録"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="@+id/password" />
 
     <ImageView
