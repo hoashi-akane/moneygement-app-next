@@ -149,7 +149,7 @@
                 android:id="@+id/spinnerCategory"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:entries="@array/Incomelist" />
+                android:entries="@array/spinnerlist" />
         </TableRow>
 
         <View
