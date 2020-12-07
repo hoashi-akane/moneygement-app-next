@@ -124,4 +124,5 @@
     <string name="LedgerChoice">入力画面</string>
     <string name="ledgername">家計簿名</string>
     <string name="ladgername">家計簿名</string>
+    <string name="groupname">グループ名</string>
 </resources>

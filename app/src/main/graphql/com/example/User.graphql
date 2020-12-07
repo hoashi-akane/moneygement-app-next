@@ -43,7 +43,7 @@ mutation insertGroup(
         userId: $userId
         groupName: $groupName
         ledgerName: $ledgerName
-    }){}
+    })
 }
 
 

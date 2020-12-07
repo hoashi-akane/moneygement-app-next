@@ -5,6 +5,7 @@ import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.InsertGroupMutation
+//import com.example.InsertGroupMutation
 import com.example.InsertUserMutation
 import com.example.LoginQuery
 import com.example.moneygement.model.User
@@ -62,15 +63,15 @@ class UserRepository: GraphqlBase(){
         return userInfo
     }
 
-    //グループ作成
-    fun createGroup(user: InsertGroupMutation){
+//    グループ作成
+    fun createGroup(group: InsertGroupMutation){
         GlobalScope.launch {
-            apolloClient.mutate(user)
-
-
+            var response = try{
+                apolloClient.mutate(group).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
         }
     }
-
-
-
 }

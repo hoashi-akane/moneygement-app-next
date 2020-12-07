@@ -12,6 +12,7 @@ import com.example.moneygement.R
 import com.example.moneygement.controller.NewGroupActivity
 import com.example.moneygement.model.User
 import com.example.moneygement.repository.Ledger
+import com.example.moneygement.repository.UserRepository
 import com.example.moneygement.service.AuthService
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -50,14 +51,14 @@ class NewGroupActivity : AppCompatActivity() {
                     .ledgerName(ladgerName)
                     .build()
 
-            User().insertExpense(insertGroup)
+            UserRepository().createGroup(insertGroup)
 
             //インテント生成
            val intent = Intent(this@NewGroupActivity, MainActivity::class.java)
            startActivity(intent)
         }
         val cancelButton = findViewById<View>(R.id.cancel) as Button
-        button.setOnClickListener {
+        cancelButton.setOnClickListener {
             val intent = Intent(this@NewGroupActivity, MainActivity::class.java)
             startActivity(intent)
         }
