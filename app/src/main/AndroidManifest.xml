@@ -13,41 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-       
-      <activity android:name=".controller.DispSavingsHistoryActivity"></activity>       
-      <activity android:name=".controller.MemberInfoReviseActivity"></activity>
-      <activity android:name=".controller.DispCalendarIncomeLedgerActivity" />
-      <activity android:name=".controller.InputIncomeHouseholdAccountBookActivity" />
-      <activity android:name=".controller.DispCalenderExpensesLedgerActivity"/>
-      <activity android:name=".controller.DispLedgerActivity">
-      </activity>
-      <activity android:name=".controller.NewMemberActivity" />
-      <activity android:name=".controller.SecondActivity" />
+        <activity android:name=".UpdateAdviserInfoActivity"></activity>
+        <activity android:name=".controller.DispSavingsHistoryActivity" />
+        <activity android:name=".controller.MemberInfoReviseActivity" />
+        <activity android:name=".controller.DispCalendarIncomeLedgerActivity" />
+        <activity android:name=".controller.InputIncomeHouseholdAccountBookActivity" />
+        <activity android:name=".controller.DispCalenderExpensesLedgerActivity" />
+        <activity android:name=".controller.DispLedgerActivity"></activity>
+        <activity android:name=".controller.NewMemberActivity" />
+        <activity android:name=".controller.SecondActivity" />
+        <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
+        <activity android:name=".controller.DispExpensesCalendarActivity" />
+        <activity android:name=".controller.InputSavingAmountActivity" />
+        <activity android:name=".controller.DispCalendarActivity"></activity>
+        <activity android:name=".controller.ChatActivity"></activity>
+        <activity android:name=".controller.LogoutActivity" />
+        <activity android:name=".controller.InputExpenseHouseholdAccountBookActivity" />
+        <activity android:name=".controller.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-      <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
-      <activity android:name=".controller.DispExpensesCalendarActivity" />
-      <activity android:name=".controller.InputSavingAmountActivity" />
-      <activity android:name=".controller.DispCalendarActivity">
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
       </activity>
-      <activity android:name=".controller.ChatActivity">
-      </activity>
-      <activity android:name=".controller.LogoutActivity"/>
-      <activity android:name=".controller.InputExpenseHouseholdAccountBookActivity"/>
-      <activity android:name=".controller.MainActivity">
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN"/>
-          <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
-      </activity>
-      <activity android:name=".controller.LoginActivity"></activity>
-      <activity android:name=".controller.DispLedgerGraphActivity">
-
-      </activity>
+      <activity android:name=".controller.LoginActivity" />
+      <activity android:name=".controller.DispLedgerGraphActivity"></activity>
       <activity android:name=".controller.AdvisorIntroductionActivity" />
 
       <meta-data
           android:name="preloaded_fonts"
           android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
