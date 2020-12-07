@@ -40,11 +40,12 @@ class MainActivity : AppCompatActivity() {
                 var i= Intent(this@MainActivity,InputSpendingExpenseAmountActivity::class.java)
                 startActivity(i)
         };
+
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9)
-//        ibtn5.setOnClickListener{
-//            var i= Intent(this@MainActivity,DispBlogActivity::class.java);
-//            startActivity(i);
-//        };
+            ibtn5.setOnClickListener {
+                var i= Intent(this@MainActivity,AdvisorIntroductionActivity::class.java)
+                startActivity(i);
+        };
 
         var targetAmount = 80000
         var savingAmount = 70000
@@ -71,19 +72,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        //if()
 
-
-//現在の貯金額を取得
-//        val rIntent = intent
-        //        Integer saving = rIntent.getIntExtra("");
-//        dateOutput.setText();
-//        //↑現在の貯金額が入ります
-//
-//
-//        //目標貯金額を取得
-//        Integer targetsaving = rIntent.getIntExtra("");
-//        dateOutput.setTexr();
-        //↑目標貯金額が入ります
     }
 }

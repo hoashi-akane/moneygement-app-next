@@ -35,13 +35,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".controller.LoginActivity" />
-        <activity android:name=".controller.DispLedgerGraphActivity"></activity>
+      </activity>
+      <activity android:name=".controller.LoginActivity" />
+      <activity android:name=".controller.DispLedgerGraphActivity"></activity>
+      <activity android:name=".controller.AdvisorIntroductionActivity" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+      <meta-data
+          android:name="preloaded_fonts"
+          android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
