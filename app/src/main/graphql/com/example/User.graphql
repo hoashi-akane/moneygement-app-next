@@ -47,3 +47,18 @@ mutation insertGroup(
 }
 
 
+//アドバイザ作成
+mutation newAdviser(
+    $id: Int!
+    $name: String!
+    $introduction: String!
+    $adviserName: String!
+){
+    createAdviser(input:{
+        id: $id
+        name: $name
+        introduction: $introduction
+        adviserName: $adviserName
+    })
+}
+
