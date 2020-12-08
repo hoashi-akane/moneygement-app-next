@@ -134,4 +134,8 @@
     <string name="ledgername">家計簿名</string>
     <string name="ladgername">家計簿名</string>
     <string name="groupname">グループ名</string>
+    <string name="adviser">アドバイザ画面へ</string>
+    <string name="advisortitle">アドバイザ</string>
+    <string name="advisor1">アドバイザ申請</string>
+    <string name="advisor2">会員リスト</string>
 </resources>
