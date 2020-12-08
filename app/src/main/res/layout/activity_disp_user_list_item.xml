@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:text="@string/username"
-            android:textSize="45sp" />
+            android:textSize="43sp" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
