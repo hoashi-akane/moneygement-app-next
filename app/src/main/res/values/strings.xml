@@ -121,9 +121,6 @@
     <string name="shareincome">共有家計簿収入登録</string>
     <string name="updateshareincome">共有家計簿収入修正</string>
     <string name="updateshareexpenses">共有家計簿支出修正</string>
-<<<<<<< Updated upstream
     <string name="LedgerChoice">入力画面</string>
-=======
     <string name="username">user</string>
->>>>>>> Stashed changes
 </resources>
