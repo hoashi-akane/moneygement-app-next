@@ -37,15 +37,8 @@
             </intent-filter>
       </activity>
       <activity android:name=".controller.LoginActivity"></activity>
-      <activity android:name=".controller.DispLedgerGraphActivity">
-
-      </activity>
-      <activity android:name=".controller.DispShareLedgerActivity">
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN"/>
-          <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
-      </activity>
+      <activity android:name=".controller.DispLedgerGraphActivity"></activity>
+      <activity android:name=".controller.DispShareLedgerActivity"></activity>
       <activity android:name=".controller.InputShareExpensesActivity"></activity>
       <activity android:name=".controller.InputShareIncomeActivity"></activity>
       <activity android:name=".controller.DispShareIncomeCalendarActivity"></activity>
