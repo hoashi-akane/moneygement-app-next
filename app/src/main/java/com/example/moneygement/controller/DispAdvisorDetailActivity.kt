@@ -1,23 +1,19 @@
 package com.example.moneygement.controller
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.TextView
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moneygement.R
-import com.example.moneygement.controller.MainActivity
-import com.example.moneygement.controller.DispLedgerActivity
 
 class DispAdvisorDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disp_advisor_detail)
-        val advisoricon = findViewById<ImageView>(R.id.imageView3)
-        val selfintroduction = findViewById<View>(R.id.textView7) as TextView
-        val advisorurl = findViewById<View>(R.id.textView13) as TextView
+
     }
 
     override fun onResume() {
@@ -38,5 +34,19 @@ class DispAdvisorDetailActivity : AppCompatActivity() {
             startActivity(intent)
         }
         val intent = Intent(this@DispAdvisorDetailActivity, MainActivity::class.java)
+
+        var si = "自己紹介"
+        var url = "https://moneygement.com/index"
+
+
+        var advisoricon = findViewById<ImageView>(R.id.imageView3)
+
+        var selfintroduction = findViewById<View>(R.id.textView7) as TextView
+        selfintroduction.text = si
+
+        var advisorurl = findViewById<View>(R.id.textView13) as TextView
+        advisorurl.text = url
+
+
     }
 }

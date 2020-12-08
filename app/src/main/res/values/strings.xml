@@ -129,6 +129,8 @@
     <string name="Evaluation">評価数：３</string>
     <string name="search">検索</string>
     <string name="LedgerChoice">入力画面</string>
+
+    <string name="username">user</string>
     <string name="ledgername">家計簿名</string>
     <string name="ladgername">家計簿名</string>
     <string name="groupname">グループ名</string>
