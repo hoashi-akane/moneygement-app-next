@@ -1,0 +1,12 @@
+query shareLedgers(
+    $userId: Int!
+){
+    ledger{
+        shareLedgers(userId: $userId){
+            id
+            adviserId
+            name
+            created_at
+        }
+    }
+}

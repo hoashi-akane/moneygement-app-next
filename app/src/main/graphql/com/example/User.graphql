@@ -31,3 +31,19 @@ mutation insertUser(
         email
     }
 }
+
+
+//グループ作成
+mutation insertGroup(
+    $userId: Int!
+    $groupName: String!
+    $ledgerName: String!
+){
+    createGroup(input:{
+        userId: $userId
+        groupName: $groupName
+        ledgerName: $ledgerName
+    })
+}
+
+

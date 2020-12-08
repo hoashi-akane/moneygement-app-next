@@ -14,6 +14,7 @@ import com.example.moneygement.R
 import com.example.moneygement.model.User
 import com.example.moneygement.repository.UserRepository
 import com.example.moneygement.service.AuthService
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.runBlocking
 
 // import com.example.moneygement.DispCalendarIncomeHouseholdAccountBookActivity;
@@ -25,6 +26,11 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        newMemberbtn.setOnClickListener {
+            val intent = Intent(this@LoginActivity, NewMemberActivity::class.java)
+            startActivity(intent)
+        }
 
         checkUser()
         val loginbtn = findViewById<View>(R.id.loginbtn) as Button

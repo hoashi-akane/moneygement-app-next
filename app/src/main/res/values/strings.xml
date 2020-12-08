@@ -20,7 +20,7 @@
     <string name="NameView6">*******@s.asojuku.ac.jp</string>
     <string name="Nameview7">貯金額</string>
     <string name="Nameview8">￥10,800</string>
-    <string name="Nameview9">会員ID</string>
+    <string name="Nameview9">目標貯金額</string>
     <string name="Nameview10">Taro0204</string>
     <string name="Login">ログイン</string>
     <string name="id">会員ID</string>
@@ -70,7 +70,10 @@
         <item>家計簿4</item>
         <item>家計簿3</item>
     </string-array>
-    <string-array name="Incomelist">
+    <string name="Nameview12">￥20,000</string>
+    <string name="change">変更</string>
+
+    <string-array name="spinnerlist">
         <item>給料</item>
         <item>お小遣い</item>
         <item>仕送り</item>
@@ -109,7 +112,7 @@
     <string name="advisordetail">アドバイザ詳細</string>
     <string name="regist">登録</string>
     <string name="release">解除</string>
-    <string name="selfintroduction">----------------------------------------------------------------------------------------------------------------------------------------------</string>
+    <string name="selfintroduction"></string>
     <string name="url">https://moneygement.com/index</string>
 
     <string name="introduction">アドバイザ機能紹介</string>
@@ -121,6 +124,14 @@
     <string name="shareincome">共有家計簿収入登録</string>
     <string name="updateshareincome">共有家計簿収入修正</string>
     <string name="updateshareexpenses">共有家計簿支出修正</string>
+    <string name="adviserlist">アドバイザ一覧</string>
+    <string name="Hoashi">帆足</string>
+    <string name="Evaluation">評価数：３</string>
+    <string name="search">検索</string>
     <string name="LedgerChoice">入力画面</string>
+
     <string name="username">user</string>
+    <string name="ledgername">家計簿名</string>
+    <string name="ladgername">家計簿名</string>
+    <string name="groupname">グループ名</string>
 </resources>
