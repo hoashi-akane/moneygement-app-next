@@ -1,18 +1,12 @@
 package com.example.moneygement.repository
 
-import android.app.Service
-import android.provider.Settings
-import androidx.annotation.RestrictTo
-import androidx.appcompat.app.AppCompatActivity
-import com.apollographql.apollo.ApolloCall
-import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.InsertSavingsDetailsMutation
+import com.example.SavingAmountQuery
 import com.example.SavingsDetailsQuery
-import kotlinx.coroutines.*
-import okhttp3.OkHttpClient
-import kotlin.coroutines.CoroutineContext
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SavingsDetails: GraphqlBase() {
 
@@ -57,5 +51,24 @@ class SavingsDetails: GraphqlBase() {
         }
         job.join()
         return savingsHistoryList
+    }
+
+    suspend fun getSavingsAmout(savingAmountQuery: SavingAmountQuery): SavingAmountQuery.SavingAmount?{
+        var result: SavingAmountQuery.Saving? = null
+        var savingAmount: SavingAmountQuery.SavingAmount? = null
+        var job = GlobalScope.launch {
+            var response = try{
+                apolloClient.query(savingAmountQuery).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+            result = response.data?.saving()
+            if(result == null || response.hasErrors()){
+                savingAmount = result!!.savingAmount()
+            }
+        }
+        job.join()
+        return savingAmount
     }
 }

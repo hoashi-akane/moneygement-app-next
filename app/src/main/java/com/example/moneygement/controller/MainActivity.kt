@@ -6,12 +6,47 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.SavingAmountQuery
+import com.example.TargetAmountQuery
 import com.example.moneygement.R
+import com.example.moneygement.repository.SavingsDetails
+import com.example.moneygement.repository.TargetAmount
+import com.example.moneygement.service.AuthService
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
+    var sa:Int =0
+    var ta:Int =0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
+//      例外処理
+        if(userId == 0){
+
+        }
+
+        GlobalScope.launch {
+            var savingAmountQuery = SavingAmountQuery.builder()
+                    .userId(userId)
+                    .build()
+            var targetAmountQuery = TargetAmountQuery.builder()
+                    .userId(userId)
+                    .build()
+
+            var savingAmount = SavingsDetails().getSavingsAmout(savingAmountQuery)
+            sa = savingAmount!!.expenseAmount()+ savingAmount.savingAmount()
+
+            var targetAmount = TargetAmount().getTargetAmount(targetAmountQuery)
+            ta = targetAmount!!
+
+
+        }
     }
 
     override fun onResume() {
@@ -37,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn4 = findViewById<ImageButton>(R.id.imageButton8)
             ibtn4.setOnClickListener {
-                var i= Intent(this@MainActivity,InputSpendingExpenseAmountActivity::class.java)
+                var i= Intent(this@MainActivity,DispShareLedgerActivity::class.java)
                 startActivity(i)
         };
 
@@ -47,31 +82,27 @@ class MainActivity : AppCompatActivity() {
                 startActivity(i);
         };
 
-        var targetAmount = 80000
-        var savingAmount = 70000
+
 
         var textView1 = findViewById<TextView>(R.id.textView15)
-        textView1.text = "¥" + targetAmount.toString()
+        textView1.text = "¥" + ta.toString()
 
         var textView2 = findViewById<TextView>(R.id.textView16)
-        textView2.text = "¥" + savingAmount.toString()
+        textView2.text = "¥" + sa.toString()
 
-        val t: Double =targetAmount.toDouble()
-        val s: Double =savingAmount.toDouble()
+        val t: Double =ta.toDouble()
+        val s: Double =sa.toDouble()
 
         val imageView2 = findViewById<ImageView>(R.id.imageView2)
         var level = s / t
-        println(savingAmount)
-        println(targetAmount)
+        println(sa)
+        println(ta)
         println(level)
         when {
             level < 0.5 -> imageView2.setImageResource(R.mipmap.`level1`)
             level < 1.0 -> imageView2.setImageResource(R.mipmap.level2)
             level == 1.0 -> imageView2.setImageResource(R.mipmap.`level2`)
         }
-
-
-
 
     }
 }
