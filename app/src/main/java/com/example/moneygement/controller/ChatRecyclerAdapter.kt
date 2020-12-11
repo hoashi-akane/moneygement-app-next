@@ -27,7 +27,8 @@ class ChatRecyclerAdapter(private var messageList: List<ChatActivity.Message>):
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.view.comment.text = messageList[position].Message
-        holder.view.name.text = messageList[position].UserId.toString()
+        holder.view.name.text = messageList[position].nickName
+        holder.view.post_date.text = messageList[position].postDate
     }
 
 }

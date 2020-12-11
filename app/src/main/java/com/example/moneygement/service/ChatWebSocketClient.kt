@@ -18,7 +18,7 @@ import org.java_websocket.handshake.ServerHandshake
 import java.lang.Exception
 import java.net.URI
 
-class ChatWebSocketClient(val activity: Activity, val messageList:MutableList<ChatActivity.Message>, uri: URI) : WebSocketClient(uri) {
+class ChatWebSocketClient(val activity: Activity, var messageList:MutableList<ChatActivity.Message>, uri: URI) : WebSocketClient(uri) {
 
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     val handler = Handler(Looper.getMainLooper())
@@ -37,9 +37,9 @@ class ChatWebSocketClient(val activity: Activity, val messageList:MutableList<Ch
 //    メッセージ受信
     override fun onMessage(message: String?) {
 
-        var messageModel = ChatActivity.Message()
-        messageModel = Gson().fromJson(message, ChatActivity.Message::class.java)
-        messageList.add(messageModel)
+    println("受取")
+    var messageModel: ChatActivity.Message = Gson().fromJson(message, ChatActivity.Message::class.java)
+        messageList.add(0, messageModel)
         viewAdapter = ChatRecyclerAdapter(messageList)
         handler.post {
             recyclerView.adapter = viewAdapter

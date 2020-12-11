@@ -59,7 +59,7 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
         }
     }
 
-    fun updateData(){
+    private fun updateData(){
         viewAdapter = RecyclerAdapter(savingsHistoryList)
         recyclerView.adapter = viewAdapter
     }

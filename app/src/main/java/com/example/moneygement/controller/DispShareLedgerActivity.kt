@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Spinner
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +59,7 @@ class DispShareLedgerActivity : AppCompatActivity() {
         super.onResume()
         var ledgerListSpinner = findViewById<View>(R.id.list) as Spinner
 
-
+//      収入ボタン
         val incomeButton = findViewById<View>(R.id.inomeHouseHold) as Button
         incomeButton.setOnClickListener {
             val index = ledgerListSpinner.selectedItemId
@@ -68,6 +69,8 @@ class DispShareLedgerActivity : AppCompatActivity() {
             intent.putExtra("ledgerId", shareLedgerList[(index.toInt())].id())
             startActivity(intent)
         }
+
+//      支出ボタン
         val expenseButton = findViewById<View>(R.id.expenseHouseHold) as Button
         expenseButton.setOnClickListener {
             val index = ledgerListSpinner.selectedItemId
@@ -76,6 +79,18 @@ class DispShareLedgerActivity : AppCompatActivity() {
             intent.putExtra("ledgerId", shareLedgerList[(index.toInt())].id())
             startActivity(intent)
         }
+
+//      チャットボタン
+        val chatButton = findViewById<View>(R.id.imageButton10) as ImageButton
+        chatButton.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
+            val intent = Intent(this@DispShareLedgerActivity, ChatActivity::class.java)
+            intent.putExtra("ledgerId", shareLedgerList[(index.toInt())].id())
+            startActivity(intent)
+        }
+
+
+//      キャンセルボタン
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
             val intent = Intent(this@DispShareLedgerActivity, MainActivity::class.java)

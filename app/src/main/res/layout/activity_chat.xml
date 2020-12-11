@@ -51,21 +51,22 @@
         android:layout_width="413dp"
         android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout4"
         app:layout_constraintVertical_bias="1.0">
 
         <EditText
             android:id="@+id/sendMessage"
-            android:layout_width="306dp"
-            android:layout_height="60dp"
+            android:layout_width="345dp"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:hint="@string/hint" />
 
         <ImageButton
             android:id="@+id/sendMessageBtn"
-            android:layout_width="108dp"
-            android:layout_height="63dp"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
             android:background="#FF799C"
             android:padding="8dp"
             android:scaleType="fitXY"
