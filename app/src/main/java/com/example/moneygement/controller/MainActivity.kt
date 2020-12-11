@@ -12,8 +12,7 @@ import com.example.moneygement.R
 import com.example.moneygement.repository.SavingsDetails
 import com.example.moneygement.repository.TargetAmount
 import com.example.moneygement.service.AuthService
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,13 +24,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
-        var userId = encryptedSharedPreferences.getInt("id", 0)
+        var userId = encryptedSharedPreferences.getInt("id", 1)
+
 //      例外処理
         if(userId == 0){
 
         }
 
-        GlobalScope.launch {
+        runBlocking {
             var savingAmountQuery = SavingAmountQuery.builder()
                     .userId(userId)
                     .build()
@@ -39,13 +39,12 @@ class MainActivity : AppCompatActivity() {
                     .userId(userId)
                     .build()
 
-            var savingAmount = SavingsDetails().getSavingsAmout(savingAmountQuery)
+            var savingAmount = SavingsDetails().getSavingsAmount(savingAmountQuery)
             sa = savingAmount!!.expenseAmount()+ savingAmount.savingAmount()
+
 
             var targetAmount = TargetAmount().getTargetAmount(targetAmountQuery)
             ta = targetAmount!!
-
-
         }
     }
 
@@ -95,10 +94,9 @@ class MainActivity : AppCompatActivity() {
 
         val imageView2 = findViewById<ImageView>(R.id.imageView2)
         var level = s / t
-        println(sa)
-        println(ta)
-        println(level)
+
         when {
+            level.isNaN() -> imageView2.setImageResource(R.mipmap.`level1`)
             level < 0.5 -> imageView2.setImageResource(R.mipmap.`level1`)
             level < 1.0 -> imageView2.setImageResource(R.mipmap.level2)
             level == 1.0 -> imageView2.setImageResource(R.mipmap.`level2`)
