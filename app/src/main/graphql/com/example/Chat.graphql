@@ -1,0 +1,30 @@
+query chatFilter(
+    $ledgerId: Int!
+    $first: Int!
+    $last: Int!
+){
+    chatList(input:{
+        ledgerId: $ledgerId
+        first: $first
+        last: $last
+    }){
+        id
+        ledgerId
+        userId
+        comment
+        createdAt
+        nickname
+    }
+}
+
+mutation newChat(
+    $ledgerId: Int!
+    $userId: Int!
+    $comment: String!
+){
+    createChat(input:{
+        ledgerId: $ledgerId
+        userId: $userId
+        comment: $comment
+    })
+}
