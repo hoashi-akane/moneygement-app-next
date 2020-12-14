@@ -19,6 +19,7 @@ class LedgerViewModel : ViewModel() {
     var ledgerNameList = MutableLiveData<List<String>>()
     var amounts = MutableLiveData<Map<String, String>>(mapOf("totalIncomes" to "収入額　¥0", "totalExpenses" to "支出額 ¥0", "totalMoney" to "総資産額 ¥0"))
     var nameList= mutableListOf<String>()
+    lateinit var ledger: LedgerQuery.Ledger1
 
     suspend fun getLedgerList(userId: Int){
         var result = Ledger().getLedgerList(userId)
@@ -47,6 +48,7 @@ class LedgerViewModel : ViewModel() {
         var result = Ledger().getLedger(id)
         var amountList = mutableMapOf<String, String>()
         if(result != null) {
+            ledger = result
             var totalIncomes = totalIncomesAmount(result.incomes())
             var totalExpenses = totalExpensesAmount(result.expenses())
             amountList["totalIncomes"] = "収入額 ¥$totalIncomes"
@@ -79,4 +81,5 @@ class LedgerViewModel : ViewModel() {
         }
         return totalExpensesAmount
     }
+
 }
