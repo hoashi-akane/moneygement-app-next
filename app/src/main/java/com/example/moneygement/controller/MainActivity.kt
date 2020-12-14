@@ -2,6 +2,7 @@ package com.example.moneygement.controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -77,11 +78,21 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9)
             ibtn5.setOnClickListener {
-                var i= Intent(this@MainActivity,AdvisorIntroductionActivity::class.java)
+                var i= Intent(this@MainActivity,MemberInfoActivity::class.java)
                 startActivity(i);
         };
 
+        var ibtn6 = findViewById<Button>(R.id.adviserbtn)
+        ibtn6.setOnClickListener{
+            var i= Intent(this@MainActivity,DispAdvisorActivity::class.java)
+            startActivity(i);
+        };
 
+        var ibtn7 = findViewById<ImageButton>(R.id.imageButton10)
+        ibtn7.setOnClickListener {
+            var i= Intent(this@MainActivity,AdvisorIntroductionActivity::class.java)
+            startActivity(i);
+        };
 
         var textView1 = findViewById<TextView>(R.id.textView15)
         textView1.text = "¥" + ta.toString()

@@ -135,4 +135,12 @@
     <string name="ladgername">家計簿名</string>
     <string name="groupname">グループ名</string>
     <string name="userlist">ユーザ一覧</string>
+    <string name="adviser">アドバイザ画面へ</string>
+    <string name="advisortitle">アドバイザ</string>
+    <string name="advisor1">アドバイザ申請</string>
+    <string name="advisor2">会員リスト</string>
+    <string name="advisorIntroduction">機能紹介</string>
+    <string name="shoreledgermenu">共有家計簿メニュー</string>
+    <string name="group">グループ作成</string>
+    <string name="mypage">マイページ</string>
 </resources>

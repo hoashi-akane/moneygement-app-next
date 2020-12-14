@@ -8,6 +8,7 @@ import com.example.InsertGroupMutation
 //import com.example.InsertGroupMutation
 import com.example.InsertUserMutation
 import com.example.LoginQuery
+import com.example.NewAdviserMutation
 import com.example.moneygement.model.User
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -70,6 +71,22 @@ class UserRepository: GraphqlBase(){
                 apolloClient.mutate(group).await()
             }catch(e: ApolloException){
                 e.printStackTrace()
+                return@launch
+            }
+        }
+    }
+
+//   アドバイザ登録
+    fun createAdviser(adivser: NewAdviserMutation){
+        GlobalScope.launch {
+            var response = try{
+                apolloClient.mutate(adivser).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+//            レスポンスエラー
+            if(response.hasErrors()){
                 return@launch
             }
         }
