@@ -54,12 +54,12 @@ class NewGroupActivity : AppCompatActivity() {
             UserRepository().createGroup(insertGroup)
 
             //インテント生成
-           val intent = Intent(this@NewGroupActivity, MainActivity::class.java)
+           val intent = Intent(this@NewGroupActivity, DispShareLedgerMenuActivity::class.java)
            startActivity(intent)
         }
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
-            val intent = Intent(this@NewGroupActivity, MainActivity::class.java)
+            val intent = Intent(this@NewGroupActivity, DispShareLedgerMenuActivity::class.java)
             startActivity(intent)
         }
     }

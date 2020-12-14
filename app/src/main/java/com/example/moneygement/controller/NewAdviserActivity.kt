@@ -25,6 +25,7 @@ class NewAdviserActivity : AppCompatActivity() {
         val authService = AuthService()
         setContentView(R.layout.activity_newadviser)
         val sharedPreferences = authService.createAuthSharedPreferences(applicationContext)
+
         id = sharedPreferences.getInt("id", 0)
         name = sharedPreferences.getString("name", "")!!
     }
