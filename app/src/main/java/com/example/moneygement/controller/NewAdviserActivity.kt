@@ -21,7 +21,7 @@ class NewAdviserActivity : AppCompatActivity() {
         val sharedPreferences = authService.createAuthSharedPreferences(applicationContext)
         val id = sharedPreferences.getInt("id", 0)
         val name = sharedPreferences.getString("name", "")
-        val intent = Intent(this@NewAdviserActivity, NewAdviserActivity::class.java)
+        val intent = Intent(this@NewAdviserActivity, DispAdvisorActivity::class.java)
         intent.putExtra("userId", id)
         intent.putExtra("userName", name)
         startActivity(intent)

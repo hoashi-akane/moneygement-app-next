@@ -44,13 +44,19 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9)
             ibtn5.setOnClickListener {
-                var i= Intent(this@MainActivity,AdvisorIntroductionActivity::class.java)
+                var i= Intent(this@MainActivity,MemberInfoActivity::class.java)
                 startActivity(i);
         };
 
         var ibtn6 = findViewById<Button>(R.id.adviserbtn)
         ibtn6.setOnClickListener{
             var i= Intent(this@MainActivity,DispAdvisorActivity::class.java)
+            startActivity(i);
+        };
+
+        var ibtn7 = findViewById<ImageButton>(R.id.imageButton10)
+        ibtn7.setOnClickListener {
+            var i= Intent(this@MainActivity,AdvisorIntroductionActivity::class.java)
             startActivity(i);
         };
 
