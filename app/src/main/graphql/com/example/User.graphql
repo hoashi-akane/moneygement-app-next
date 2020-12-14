@@ -5,6 +5,7 @@ query login(
     login(input:{
         email: $email
         password: $password
+        token: ""
     }){
         id
         name
@@ -62,3 +63,18 @@ mutation newAdviser(
     })
 }
 
+
+//アドバイザ一覧
+query adviserListFilter(
+    $first: Int!
+    $last: Int!
+){
+    adviserList(input:{
+        first: $first
+        last: $last
+    }){
+        id
+        adviser_name
+        introduction
+    }
+}

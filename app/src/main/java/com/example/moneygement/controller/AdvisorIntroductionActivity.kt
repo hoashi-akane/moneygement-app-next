@@ -22,7 +22,7 @@ class AdvisorIntroductionActivity : AppCompatActivity() {
 
         var adviserBtn = findViewById<Button>(R.id.adviserBtn)
         adviserBtn.setOnClickListener{
-            var i = Intent(this@AdvisorIntroductionActivity, MainActivity::class.java)
+            var i = Intent(this@AdvisorIntroductionActivity, DispAdvisorListActivity::class.java)
             startActivity(i);
         };
 

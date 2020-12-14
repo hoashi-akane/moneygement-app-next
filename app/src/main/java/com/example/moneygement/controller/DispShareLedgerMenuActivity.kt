@@ -19,13 +19,13 @@ class DispShareLedgerMenuActivity : AppCompatActivity() {
 
         var sharebtn = findViewById<Button>(R.id.sharebtn)
         sharebtn.setOnClickListener{
-            var i= Intent(this@DispShareLedgerMenuActivity,DispUserListActivity::class.java)
+            var i= Intent(this@DispShareLedgerMenuActivity,DispShareLedgerActivity::class.java)
             startActivity(i);
         };
 
         var groupbtn = findViewById<Button>(R.id.groupbtn)
         groupbtn.setOnClickListener{
-            var i= Intent(this@DispShareLedgerMenuActivity,AdvisorIntroductionActivity::class.java)
+            var i= Intent(this@DispShareLedgerMenuActivity,NewGroupActivity::class.java)
             startActivity(i);
         };
 

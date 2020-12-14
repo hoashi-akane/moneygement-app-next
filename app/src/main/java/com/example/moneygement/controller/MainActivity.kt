@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn4 = findViewById<ImageButton>(R.id.imageButton8)
             ibtn4.setOnClickListener {
-                var i= Intent(this@MainActivity,DispShareLedgerActivity::class.java)
+                var i= Intent(this@MainActivity,DispShareLedgerMenuActivity::class.java)
                 startActivity(i)
         };
 
