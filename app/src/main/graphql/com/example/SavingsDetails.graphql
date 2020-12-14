@@ -32,3 +32,24 @@ query savingsDetails(
   }
 }
 }
+
+query savingAmount(
+    $userId: Int!
+){
+    saving{
+        savingAmount(userId: $userId){
+            savingAmount
+            expenseAmount
+        }
+    }
+}
+query targetAmount(
+    $userId: Int!
+){
+    saving{
+        savingDetail(userId: $userId){
+            targetAmount
+        }
+    }
+}
+

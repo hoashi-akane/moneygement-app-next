@@ -84,4 +84,6 @@ mutation createExpenseDetail(
         amount: $amount
         note: $note
     })
+
+
 }
