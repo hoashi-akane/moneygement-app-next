@@ -143,4 +143,9 @@
     <string name="shoreledgermenu">共有家計簿メニュー</string>
     <string name="group">グループ作成</string>
     <string name="mypage">マイページ</string>
+    <string name="default_notification_channel_id">1</string>
+    <string name="default_notification_channel_name">cms</string>
+    <string name="channel_description">説明</string>
+    <string name="deleteGroup">グループ削除</string>
+
 </resources>
