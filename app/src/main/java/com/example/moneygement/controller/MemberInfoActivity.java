@@ -14,8 +14,5 @@ public class MemberInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memberinfo);
-
-        Imageview = findViewById(R.id.icon_image);
-        Imageview = findViewById(R.id.edit_image);
     }
 }
