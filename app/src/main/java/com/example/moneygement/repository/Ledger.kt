@@ -2,10 +2,7 @@ package com.example.moneygement.repository
 
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
-import com.example.CreateExpenseDetailMutation
-import com.example.CreateIncomeDetailMutation
-import com.example.LedgerQuery
-import com.example.LedgersQuery
+import com.example.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -78,6 +75,51 @@ class Ledger: GraphqlBase() {
         GlobalScope.launch {
             val response = try{
                 apolloClient.mutate(createIncomeDetailMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                println("エラー")
+            }
+        }
+    }
+
+    fun createLedger(createLedgerMutation: CreateLedgerMutation){
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(createLedgerMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                println("エラー")
+            }
+        }
+    }
+
+    fun deleteLedger(deleteLedgerMutation: DeleteLedgerMutation){
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(deleteLedgerMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                println("エラー")
+            }
+        }
+    }
+
+    fun addAdviser(addAdviserMutation: AddAdviserMutation){
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(addAdviserMutation).await()
             }catch(e: ApolloException){
                 e.printStackTrace()
                 return@launch

@@ -55,6 +55,16 @@ mutation createLedger(
     })
 }
 
+mutation deleteLedger(
+    $userId: Int!
+    $ledgerId: Int!
+){
+    deleteLedger(input:{
+        id: $ledgerId
+        userId: $userId
+    })
+}
+
 mutation createIncomeDetail(
     $ledgerId: Int!
     $categoryId: Int!
@@ -85,6 +95,16 @@ mutation createExpenseDetail(
         amount: $amount
         note: $note
     })
+}
 
-
+mutation addAdviser(
+    $userId: Int!
+    $ledgerId: Int!
+    $adviserId: Int!
+){
+    addUseAdviser(input:{
+        userId: $userId
+        ledgerId: $ledgerId
+        adviserId: $adviserId
+    })
 }
