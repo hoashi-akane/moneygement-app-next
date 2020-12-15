@@ -147,5 +147,5 @@
     <string name="default_notification_channel_name">cms</string>
     <string name="channel_description">説明</string>
     <string name="deleteGroup">グループ削除</string>
-
+    <string name="advisernickname">アドバイザニックネーム</string>
 </resources>
