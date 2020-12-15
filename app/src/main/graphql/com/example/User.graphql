@@ -11,6 +11,8 @@ query login(
         name
         nickname
         email
+        adviser_name
+        introduction
     }
 }
 
@@ -84,4 +86,23 @@ mutation deleteGroup(
     $id: Int!
 ){
     deleteGroup(groupId: $id)
+}
+
+
+// アドバイザから見た会員リスト
+query useAdvisermemberFilter(
+    $userId: Int!
+    $first: Int!
+    $last: Int!
+){
+    useAdviserMemberList(input:{
+        userId: $userId
+        first: $first
+        last: $last
+    }){
+        id
+        userId
+        nickName
+        ledgerName
+    }
 }

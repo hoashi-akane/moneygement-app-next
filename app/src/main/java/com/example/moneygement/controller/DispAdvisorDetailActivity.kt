@@ -34,6 +34,7 @@ class DispAdvisorDetailActivity : AppCompatActivity() {
         val regist = findViewById<View>(R.id.button2) as Button
         regist.setOnClickListener {
             val intent = Intent(this@DispAdvisorDetailActivity, InputLedgerChoiceActivity::class.java)
+            intent.putExtra("adviserId", id)
             startActivity(intent)
         }
         val release = findViewById<View>(R.id.button7) as Button
