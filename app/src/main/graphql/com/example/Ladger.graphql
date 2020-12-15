@@ -38,6 +38,7 @@ query ledgers(
         ledgers(userId: $userId){
             id
             adviserId
+            groupId
             name
             created_at
         }

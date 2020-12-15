@@ -13,6 +13,7 @@ import com.example.LedgersQuery
 import com.example.moneygement.R
 import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.databinding.ActivityInputLedgerChoiceBindingImpl
+import com.example.moneygement.service.AuthService
 import com.example.moneygement.viewmodel.LedgerChoiceViewModel
 import kotlinx.coroutines.runBlocking
 
@@ -27,8 +28,12 @@ class InputLedgerChoiceActivity : AppCompatActivity() {
 
         val viewModel : LedgerChoiceViewModel by viewModels()
 
+        var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
+
+
         runBlocking{
-            viewModel.getLedgerList(1)
+            viewModel.getLedgerList(userId)
             ledgerList = viewModel.listItem
         }
         binding = DataBindingUtil.setContentView(

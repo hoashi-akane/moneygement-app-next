@@ -125,4 +125,20 @@ class UserRepository: GraphqlBase(){
 
         return result
     }
+
+//  グループ削除
+    fun deleteGroup(deleteGroupMutation: DeleteGroupMutation){
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(deleteGroupMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                return@launch
+            }
+        }
+    }
 }

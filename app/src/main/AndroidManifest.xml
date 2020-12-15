@@ -13,20 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateAdviserInfoActivity"></activity>
+        <activity android:name=".controller.DeleteGroupActivity"></activity>
+        <activity android:name=".UpdateAdviserInfoActivity" />
         <activity android:name=".controller.DispSavingsHistoryActivity" />
         <activity android:name=".controller.MemberInfoReviseActivity" />
         <activity android:name=".controller.DispCalendarIncomeLedgerActivity" />
         <activity android:name=".controller.InputIncomeHouseholdAccountBookActivity" />
         <activity android:name=".controller.DispCalenderExpensesLedgerActivity" />
-        <activity android:name=".controller.DispLedgerActivity"></activity>
+        <activity android:name=".controller.DispLedgerActivity" />
         <activity android:name=".controller.NewMemberActivity" />
         <activity android:name=".controller.SecondActivity" />
         <activity android:name=".controller.InputSpendingExpenseAmountActivity" />
         <activity android:name=".controller.DispExpensesCalendarActivity" />
         <activity android:name=".controller.InputSavingAmountActivity" />
-        <activity android:name=".controller.DispCalendarActivity"></activity>
-        <activity android:name=".controller.ChatActivity"></activity>
+        <activity android:name=".controller.DispCalendarActivity" />
+        <activity android:name=".controller.ChatActivity" />
         <activity android:name=".controller.LogoutActivity" />
         <activity android:name=".controller.InputExpenseHouseholdAccountBookActivity" />
         <activity android:name=".controller.MainActivity">
@@ -36,26 +37,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.LoginActivity">
-
-        </activity>
-        <activity android:name=".controller.DispLedgerGraphActivity"></activity>
-        <activity android:name=".controller.DispShareLedgerActivity">
-
-        </activity>
-        <activity android:name=".controller.InputShareExpensesActivity"></activity>
-        <activity android:name=".controller.InputShareIncomeActivity"></activity>
-        <activity android:name=".controller.DispShareIncomeCalendarActivity"></activity>
-        <activity android:name=".controller.DispShareExpensesCalendarActivity"></activity>
-        <activity android:name=".controller.NewAdviserActivity">
-
-        </activity>
-        <activity android:name=".controller.AdvisorIntroductionActivity"></activity>
-        <activity android:name=".controller.DispAdvisorActivity"></activity>
-        <activity android:name=".controller.MemberInfoActivity"></activity>
-        <activity android:name=".controller.DispShareLedgerMenuActivity"></activity>
-        <activity android:name=".controller.NewGroupActivity"></activity>
-        <activity android:name=".controller.DispAdvisorListActivity"></activity>
-        <activity android:name=".controller.DispAdvisorDetailActivity"></activity>
+        <activity android:name=".controller.LoginActivity"></activity>
+        <activity android:name=".controller.DispLedgerGraphActivity" />
+        <activity android:name=".controller.DispShareLedgerActivity"></activity>
+        <activity android:name=".controller.InputShareExpensesActivity" />
+        <activity android:name=".controller.InputShareIncomeActivity" />
+        <activity android:name=".controller.DispShareIncomeCalendarActivity" />
+        <activity android:name=".controller.DispShareExpensesCalendarActivity" />
+        <activity android:name=".controller.NewAdviserActivity"></activity>
+        <activity android:name=".controller.AdvisorIntroductionActivity" />
+        <activity android:name=".controller.DispAdvisorActivity" />
+        <activity android:name=".controller.MemberInfoActivity" />
+        <activity android:name=".controller.DispShareLedgerMenuActivity" />
+        <activity android:name=".controller.NewGroupActivity" />
+        <activity android:name=".controller.DispAdvisorListActivity" />
+        <activity android:name=".controller.DispAdvisorDetailActivity" />
+        <activity android:name=".controller.InputLedgerChoiceActivity" />
     </application>
+
 </manifest>

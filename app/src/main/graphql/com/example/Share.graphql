@@ -5,6 +5,7 @@ query shareLedgers(
         shareLedgers(userId: $userId){
             id
             adviserId
+            groupId
             name
             created_at
         }
