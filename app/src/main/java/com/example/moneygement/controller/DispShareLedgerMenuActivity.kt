@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneygement.R
+import kotlinx.android.synthetic.main.activity_disp_share_ledger_menu.*
 
 class DispShareLedgerMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,16 +19,22 @@ class DispShareLedgerMenuActivity : AppCompatActivity() {
 
 
         var sharebtn = findViewById<Button>(R.id.sharebtn)
-        sharebtn.setOnClickListener{
-            var i= Intent(this@DispShareLedgerMenuActivity,DispShareLedgerActivity::class.java)
+        sharebtn.setOnClickListener {
+            var i = Intent(this@DispShareLedgerMenuActivity, DispShareLedgerActivity::class.java)
             startActivity(i);
-        };
+        }
 
         var groupbtn = findViewById<Button>(R.id.groupbtn)
         groupbtn.setOnClickListener{
             var i= Intent(this@DispShareLedgerMenuActivity,NewGroupActivity::class.java)
             startActivity(i);
-        };
+        }
+
+        val groupbtn2 = groupbtn2
+        groupbtn2.setOnClickListener{
+            var i = Intent(this@DispShareLedgerMenuActivity, DeleteGroupActivity::class.java)
+            startActivity(i)
+        }
 
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {

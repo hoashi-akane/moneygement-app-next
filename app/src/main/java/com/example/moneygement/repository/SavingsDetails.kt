@@ -53,7 +53,7 @@ class SavingsDetails: GraphqlBase() {
         return savingsHistoryList
     }
 
-    suspend fun getSavingsAmout(savingAmountQuery: SavingAmountQuery): SavingAmountQuery.SavingAmount?{
+    suspend fun getSavingsAmount(savingAmountQuery: SavingAmountQuery): SavingAmountQuery.SavingAmount?{
         var result: SavingAmountQuery.Saving? = null
         var savingAmount: SavingAmountQuery.SavingAmount? = null
         var job = GlobalScope.launch {
@@ -65,6 +65,7 @@ class SavingsDetails: GraphqlBase() {
             }
             result = response.data?.saving()
             if(result == null || response.hasErrors()){
+            }else{
                 savingAmount = result!!.savingAmount()
             }
         }
