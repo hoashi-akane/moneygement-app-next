@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
-        var userId = encryptedSharedPreferences.getInt("id", 1)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
 
 //      例外処理
         if(userId == 0){
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn1 = findViewById<ImageButton>(R.id.imageButton5)
         ibtn1.setOnClickListener{
-            var i = Intent(this@MainActivity, DispLedgerActivity::class.java)
+            var i = Intent(this@MainActivity, DispLedgerMenuActivity::class.java)
             startActivity(i);
         };
 
