@@ -7,201 +7,193 @@
     android:background="#F4F4F0"
     tools:context=".controller.MemberInfoReviseActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="411dp"
-        android:layout_height="105dp"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/icon_image2"
-        android:layout_width="172dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/kisspng_computer_icons_user_clip_art_user_5abf13db5624e4_1771742215224718993529" />
-
-    <ImageView
-        android:id="@+id/edit_image2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/close_delete_cancel_del_ui_round_512"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="365dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="105dp"
-        tools:ignore="MissingConstraints" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/constraintLayout"
+        android:layout_width="407dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="4dp"
+        android:background="#FF799C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/txtNameView20"
-            android:layout_width="289dp"
-            android:layout_height="39dp"
+        <Button
+            android:id="@+id/cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="2dp"
+            android:text="←"
+            android:textColor="#FFFFFF"
             android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="354dp" />
-
-        <TextView
-            android:id="@+id/txtNameView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:text="@string/Nameview4"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="354dp" />
-
-        <TextView
-            android:id="@+id/txtNameView27"
-            android:layout_width="102dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="8dp"
-            android:hint="@string/Nameview5"
-            android:text="@string/Nameview5"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.009"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="201dp" />
-
-        <TextView
-            android:id="@+id/txtNameView22"
-            android:layout_width="93dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="2dp"
-            android:hint="@string/Nameview9"
-            android:text="@string/Nameview9"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="268dp" />
-
-        <EditText
-            android:id="@+id/editTextNumberSigned"
-            android:layout_width="291dp"
-            android:layout_height="65dp"
-            android:fontFamily="@font/electrolize"
-            android:hint="@string/Nameview10"
-            android:text="@string/Nameview12"
-            android:textSize="36sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.468"
+            app:layout_constraintVertical_bias="0.555"
             tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/eMail"
-            android:layout_width="289dp"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="193dp" />
-
         <TextView
-            android:id="@+id/txtNameView30"
-            android:layout_width="38dp"
-            android:layout_height="22dp"
-            android:hint="@string/name"
-            android:text="@string/name"
-            android:textSize="18sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="495dp" />
-
-        <TextView
-            android:id="@+id/txtNameView31"
-            android:layout_width="38dp"
+            android:id="@+id/mypage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/Nameview3"
-            android:text="@string/Nameview3"
-            android:textSize="18sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="453dp" />
-
-        <EditText
-            android:id="@+id/txtNameView26"
-            android:layout_width="164dp"
-            android:layout_height="55dp"
-            android:textSize="30sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="224dp"
-            tools:layout_editor_absoluteY="404dp" />
-
-        <TextView
-            android:id="@+id/txtNameView29"
-            android:layout_width="38dp"
-            android:layout_height="22dp"
-            android:hint="@string/surname"
-            android:text="@string/surname"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.463"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="431dp" />
-
-        <EditText
-            android:id="@+id/txtNameView28"
-            android:layout_width="164dp"
-            android:layout_height="55dp"
-            android:textSize="30sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="224dp"
-            tools:layout_editor_absoluteY="468dp" />
-
-        <Button
-            android:id="@+id/changebtn"
-            android:layout_width="74dp"
-            android:layout_height="52dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:fontFamily="sans-serif"
-            android:text="@string/change"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:text="@string/mypage"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="548dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtNameView12"
+        android:layout_width="123dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="112dp"
+        android:hint="@string/Nameview9"
+        android:text="@string/Nameview9"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:text="@string/Nameview4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtNameView20"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtNameView28"
+        android:layout_width="203dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="176dp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView27"
+        android:layout_width="102dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="408dp"
+        android:hint="@string/Nameview5"
+        android:text="@string/Nameview5"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView31"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:hint="@string/Nameview3"
+        android:text="@string/Nameview3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtNameView30"
+        android:layout_width="108dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="492dp"
+        android:hint="@string/name"
+        android:text="@string/advisernickname"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtNameView26"
+        android:layout_width="203dp"
+        android:layout_height="55dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="197dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mypagebtn"
+        android:layout_width="181dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FF799C"
+        android:text="@string/change"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
