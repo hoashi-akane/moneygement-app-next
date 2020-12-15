@@ -141,4 +141,27 @@ class UserRepository: GraphqlBase(){
             }
         }
     }
+
+// アドバイザがWあユーザ位置ら
+    suspend fun getUserList(useAdvisermemberFilterQuery: UseAdvisermemberFilterQuery): MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? {
+        var result: MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? = null
+
+        var job = GlobalScope.launch {
+            var response = try{
+                apolloClient.query(useAdvisermemberFilterQuery).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.data?.useAdviserMemberList() == null || response.hasErrors()){
+                return@launch
+            }else{
+                result = response.data?.useAdviserMemberList()!!
+            }
+        }
+        job.join()
+
+        return result
+    }
 }
