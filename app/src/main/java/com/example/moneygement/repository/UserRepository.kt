@@ -4,12 +4,11 @@ import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
-import com.example.InsertGroupMutation
+import com.example.*
 //import com.example.InsertGroupMutation
-import com.example.InsertUserMutation
-import com.example.LoginQuery
-import com.example.NewAdviserMutation
 import com.example.moneygement.model.User
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -18,6 +17,17 @@ class UserRepository: GraphqlBase(){
     private val apolloClient = super.access()
 
     suspend fun login(email: String, password: String): LoginQuery.Login? {
+//      ログイン時に利用するFCMトークンを確認
+//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+//            if (!task.isSuccessful) {
+//                return@OnCompleteListener
+//            }
+//
+//            // Get new FCM registration token
+//            val token = task.result
+//        })
+
+
         var loginQuery: LoginQuery.Login? = null
         var job = GlobalScope.launch {
             var response = try {
@@ -90,5 +100,29 @@ class UserRepository: GraphqlBase(){
                 return@launch
             }
         }
+    }
+
+
+//    アドバイザ一覧取得
+    suspend fun getAdviserList(adviserListFilterQuery: AdviserListFilterQuery): MutableList<AdviserListFilterQuery.AdviserList>? {
+        var result: MutableList<AdviserListFilterQuery.AdviserList>? = null
+
+        val job = GlobalScope.launch {
+            var response = try{
+                apolloClient.query(adviserListFilterQuery).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.data?.adviserList() == null || response.hasErrors()){
+                return@launch
+            }else {
+                result = response.data?.adviserList()!!
+            }
+        }
+        job.join()
+
+        return result
     }
 }
