@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.DeleteGroupActivity"></activity>
+        <activity android:name=".controller.DispAdviserLedgerActivity"></activity>
+        <activity android:name=".controller.DeleteLedgerActivity" />
+        <activity android:name=".controller.DeleteGroupActivity" />
         <activity android:name=".UpdateAdviserInfoActivity" />
         <activity android:name=".controller.DispSavingsHistoryActivity" />
         <activity android:name=".controller.MemberInfoReviseActivity" />
@@ -31,20 +33,22 @@
         <activity android:name=".controller.LogoutActivity" />
         <activity android:name=".controller.InputExpenseHouseholdAccountBookActivity" />
         <activity android:name=".controller.MainActivity">
+
+        </activity>
+        <activity android:name=".controller.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.LoginActivity"></activity>
         <activity android:name=".controller.DispLedgerGraphActivity" />
-        <activity android:name=".controller.DispShareLedgerActivity"></activity>
+        <activity android:name=".controller.DispShareLedgerActivity" />
         <activity android:name=".controller.InputShareExpensesActivity" />
         <activity android:name=".controller.InputShareIncomeActivity" />
         <activity android:name=".controller.DispShareIncomeCalendarActivity" />
         <activity android:name=".controller.DispShareExpensesCalendarActivity" />
-        <activity android:name=".controller.NewAdviserActivity"></activity>
+        <activity android:name=".controller.NewAdviserActivity" />
         <activity android:name=".controller.AdvisorIntroductionActivity" />
         <activity android:name=".controller.DispAdvisorActivity" />
         <activity android:name=".controller.MemberInfoActivity" />
@@ -53,6 +57,8 @@
         <activity android:name=".controller.DispAdvisorListActivity" />
         <activity android:name=".controller.DispAdvisorDetailActivity" />
         <activity android:name=".controller.InputLedgerChoiceActivity" />
+        <activity android:name=".controller.DispUserListActivity" />
+        <activity android:name=".controller.DispLedgerMenuActivity" />
     </application>
 
 </manifest>
