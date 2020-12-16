@@ -10,12 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.LedgerQuery
-import com.example.LedgersQuery
 import com.example.ShareLedgersQuery
 import com.example.moneygement.R
-import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.databinding.ActivityDispShareLedgerBinding
 import com.example.moneygement.viewmodel.LedgerViewModel
+import kotlinx.android.synthetic.main.activity_disp_share_ledger.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -145,6 +144,14 @@ class DispShareLedgerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//      招待ボタン
+        var invitationBtn = invitationBtn
+        invitationBtn.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
+            val intent = Intent(this@DispShareLedgerActivity, InvitationGroupActivity::class.java)
+            intent.putExtra("groupId", shareLedgerList[(index.toInt())].groupId())
+            startActivity(intent)
+        }
 
 //      キャンセルボタン
         val cancelButton = findViewById<View>(R.id.cancel) as Button

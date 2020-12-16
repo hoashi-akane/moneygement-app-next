@@ -85,3 +85,16 @@ mutation deleteGroup(
 ){
     deleteGroup(groupId: $id)
 }
+
+// グループ招待
+mutation addGroup(
+    $groupId: Int!
+    $email: String!
+    $nickName: String!
+){
+    addGroupUser(input:{
+        groupId: $groupId
+        email: $email
+        nickName: $nickName
+    })
+}
