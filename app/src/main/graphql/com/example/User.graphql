@@ -106,3 +106,31 @@ query useAdvisermemberFilter(
         ledgerName
     }
 }
+
+// ユーザ情報更新
+mutation updateUser(
+    $id: Int!
+    $name: String!
+    $nickname: String!
+    $email: String!
+    $adviserName: String
+    $introduction: String
+    $targetAmount: Int!
+){
+    updateUser(input:{
+        id: $id
+        name: $name
+        nickname: $nickname
+        email: $email
+        adviserName: $adviserName
+        introduction: $introduction
+        targetAmount: $targetAmount
+    }){
+        id
+        name
+        nickname
+        email
+        adviser_name
+        introduction
+    }
+}

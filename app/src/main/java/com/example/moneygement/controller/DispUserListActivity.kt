@@ -3,6 +3,7 @@ package com.example.moneygement.controller
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,11 +50,17 @@ class DispUserListActivity: AppCompatActivity(), UserListRecyclerAdapter.MyViewH
         }
         userRecyclerView.adapter = UserListRecyclerAdapter(userList, this@DispUserListActivity)
         recyclerAdapter.notifyDataSetChanged()
+
+        val cancelButton = findViewById<View>(R.id.cancel) as Button
+        cancelButton.setOnClickListener {
+            val intent = Intent(this@DispUserListActivity, DispAdvisorActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 //  押された場合の処理
     override fun onItemClick(view: View, position: Int, userItem: UseAdvisermemberFilterQuery.UseAdviserMemberList) {
-        val intent = Intent(this@DispUserListActivity, DispLedgerActivity::class.java)
+        val intent = Intent(this@DispUserListActivity, DispAdviserLedgerActivity::class.java)
         intent.putExtra("ledgerId", userList[position].id())
         startActivity(intent)
     }

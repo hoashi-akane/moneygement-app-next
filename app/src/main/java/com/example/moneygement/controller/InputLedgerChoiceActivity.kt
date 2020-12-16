@@ -17,6 +17,7 @@ import com.example.moneygement.databinding.ActivityInputLedgerChoiceBindingImpl
 import com.example.moneygement.repository.Ledger
 import com.example.moneygement.service.AuthService
 import com.example.moneygement.viewmodel.LedgerChoiceViewModel
+import kotlinx.android.synthetic.main.activity_input_ledger_choice.*
 import kotlinx.coroutines.runBlocking
 
 class InputLedgerChoiceActivity : AppCompatActivity() {
@@ -37,7 +38,6 @@ class InputLedgerChoiceActivity : AppCompatActivity() {
         var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
         userId = encryptedSharedPreferences.getInt("id", 0)
 
-
         runBlocking{
             viewModel.getLedgerList(userId)
             ledgerList = viewModel.listItem
@@ -51,16 +51,14 @@ class InputLedgerChoiceActivity : AppCompatActivity() {
 
         }
 
-    override fun onRestart() {
-        super.onRestart()
+    override fun onResume() {
+        super.onResume()
 
         var ledgerListSpinner = findViewById<View>(R.id.list) as Spinner
         val index = ledgerListSpinner.selectedItemId
 
-        val comment = findViewById<View>(R.id.fname) as EditText
 
-
-        val choiceButton = findViewById<View>(R.id.topbutton2) as Button
+        val choiceButton = topbutton2
         choiceButton.setOnClickListener {
             val index = ledgerListSpinner.selectedItemId
             if(adviserId != 0 && userId != 0){
