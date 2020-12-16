@@ -88,7 +88,6 @@ mutation deleteGroup(
     deleteGroup(groupId: $id)
 }
 
-
 // アドバイザから見た会員リスト
 query useAdvisermemberFilter(
     $userId: Int!
@@ -133,4 +132,16 @@ mutation updateUser(
         adviser_name
         introduction
     }
+
+// グループ招待
+mutation addGroup(
+    $groupId: Int!
+    $email: String!
+    $nickName: String!
+){
+    addGroupUser(input:{
+        groupId: $groupId
+        email: $email
+        nickName: $nickName
+    })
 }

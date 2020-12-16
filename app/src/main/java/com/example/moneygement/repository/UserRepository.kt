@@ -1,14 +1,12 @@
 package com.example.moneygement.repository
 
+//import com.example.InsertGroupMutation
 import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.*
-//import com.example.InsertGroupMutation
 import com.example.moneygement.model.User
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -142,7 +140,7 @@ class UserRepository: GraphqlBase(){
         }
     }
 
-// アドバイザがWあユーザ位置ら
+  // アドバイザ側ユーザ一覧
     suspend fun getUserList(useAdvisermemberFilterQuery: UseAdvisermemberFilterQuery): MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? {
         var result: MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? = null
 
@@ -153,7 +151,7 @@ class UserRepository: GraphqlBase(){
                 e.printStackTrace()
                 return@launch
             }
-
+          
             if(response.data?.useAdviserMemberList() == null || response.hasErrors()){
                 return@launch
             }else{
@@ -190,5 +188,20 @@ class UserRepository: GraphqlBase(){
                     })
         }.join()
         return user
+    }      
+      //  グループ招待
+    fun addGroup(addGroupMutation: AddGroupMutation){
+        GlobalScope.launch {
+            val response = try{
+                apolloClient.mutate(addGroupMutation).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            if(response.hasErrors()){
+                return@launch
+            }
+        }
     }
 }
