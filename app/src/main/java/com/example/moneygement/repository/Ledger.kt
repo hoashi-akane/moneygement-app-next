@@ -32,6 +32,28 @@ class Ledger: GraphqlBase() {
         return ledgerIdList
     }
 
+    suspend fun getAdviserLedgerList(adviserId: Int): List<AdviserLedgersQuery.AdviserLedger>? {
+        var ledgerAdviserIdList: List<AdviserLedgersQuery.AdviserLedger>? = null
+
+        val job = GlobalScope.launch {
+            var response = try{
+                apolloClient.query(AdviserLedgersQuery(1)).await()
+            }catch(e: ApolloException){
+                e.printStackTrace()
+                return@launch
+            }
+
+            var result = response.data?.ledger()
+            if(result == null || response.hasErrors()){
+                return@launch
+            }else{
+                ledgerAdviserIdList = result.adviserLedgers()
+            }
+        }
+        job.join()
+        return ledgerAdviserIdList
+    }
+
     suspend fun getLedger(id: Int): LedgerQuery.Ledger1?{
         var ledger: LedgerQuery.Ledger1? = null
 

@@ -2,6 +2,8 @@ package com.example.moneygement.controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
@@ -16,6 +18,7 @@ import com.example.moneygement.R
 import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.databinding.ActivityDispShareLedgerBinding
 import com.example.moneygement.viewmodel.LedgerViewModel
+import kotlinx.android.synthetic.main.activity_disp_share_ledger.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -56,6 +59,9 @@ class DispShareLedgerActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 GlobalScope.launch{
                     viewModel.listPositionToGetShareLedgerData(position)
+                    incomeList = viewModel!!.ledger.incomes()
+                    expenseList = viewModel.ledger.expenses()
+                    changeAdapter()
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -145,12 +151,31 @@ class DispShareLedgerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//       グラフボタン
+        val graphBtn = graphBtn2
+        graphBtn.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
+            val intent = Intent(this@DispShareLedgerActivity, DispLedgerGraphActivity::class.java)
+            intent.putExtra("ledgerId", shareLedgerList[index.toInt()].id())
+            startActivity(intent)
+        }
+
 
 //      キャンセルボタン
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
             val intent = Intent(this@DispShareLedgerActivity, MainActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun changeAdapter(){
+        val handler = Handler(Looper.getMainLooper())
+        handler.post{
+            incomeRecyclerView.adapter = IncomeRecyclerAdapter(incomeList)
+            expenseRecyclerView.adapter = ExpenseRecyclerAdapter(expenseList)
+            incomeViewAdapter.notifyDataSetChanged()
+            expenseViewAdapter.notifyDataSetChanged()
         }
     }
 }
