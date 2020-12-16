@@ -12,6 +12,20 @@
     android:layout_height="match_parent"
     tools:context=".controller.DispLedgerActivity">
 
+    <Button
+        android:id="@+id/graphBtn3"
+        android:layout_width="158dp"
+        android:layout_height="41dp"
+        android:background="#FF799C"
+        android:text="グラフを表示"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="455dp"

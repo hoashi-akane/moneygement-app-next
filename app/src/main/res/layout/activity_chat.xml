@@ -38,7 +38,7 @@
                 android:layout_weight="30"
                 android:background="#FF799C"
                 android:padding="15dp"
-                android:text="@string/Nameview11"
+                android:text="チャット"
                 android:textAlignment="viewStart"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24sp" />

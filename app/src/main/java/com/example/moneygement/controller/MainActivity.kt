@@ -29,7 +29,9 @@ class MainActivity : AppCompatActivity() {
 
 //      例外処理
         if(userId == 0){
-
+            AuthService().logout(applicationContext)
+            var intent = Intent(this@MainActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         runBlocking {
@@ -56,13 +58,7 @@ class MainActivity : AppCompatActivity() {
         ibtn1.setOnClickListener{
             var i = Intent(this@MainActivity, DispLedgerMenuActivity::class.java)
             startActivity(i);
-        };
-
-        var ibtn2 = findViewById<ImageButton>(R.id.imageButton6)
-        ibtn2.setOnClickListener{
-                var i= Intent(this@MainActivity,DispLedgerGraphActivity::class.java)
-                startActivity(i);
-        };
+        }
 
         var ibtn3 = findViewById<ImageButton>(R.id.imageButton7)
             ibtn3.setOnClickListener{
@@ -107,10 +103,10 @@ class MainActivity : AppCompatActivity() {
         var level = s / t
 
         when {
-            level.isNaN() -> imageView2.setImageResource(R.mipmap.`level1`)
-            level < 0.5 -> imageView2.setImageResource(R.mipmap.`level1`)
+            level.isNaN() -> imageView2.setImageResource(R.mipmap.level1)
+            level < 0.5 -> imageView2.setImageResource(R.mipmap.level1)
             level < 1.0 -> imageView2.setImageResource(R.mipmap.level2)
-            level == 1.0 -> imageView2.setImageResource(R.mipmap.`level2`)
+            level >= 1.0 -> imageView2.setImageResource(R.mipmap.level2)
         }
 
     }
