@@ -70,13 +70,13 @@ class NewAdviserActivity : AppCompatActivity() {
             }
 
 
-            val intent = Intent(this@NewAdviserActivity, MainActivity::class.java)
+            val intent = Intent(this@NewAdviserActivity, DispAdvisorActivity::class.java)
             startActivity(intent)
         }
 
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
-            val intent = Intent(this@NewAdviserActivity, MainActivity::class.java)
+            val intent = Intent(this@NewAdviserActivity, DispAdvisorActivity::class.java)
             startActivity(intent)
         }
     }

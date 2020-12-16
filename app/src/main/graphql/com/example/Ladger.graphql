@@ -108,3 +108,17 @@ mutation addAdviser(
         adviserId: $adviserId
     })
 }
+
+query adviserLedgers(
+    $adviserId: Int!
+){
+    ledger{
+        adviserLedgers(adviserId: $adviserId){
+            id
+            adviserId
+            groupId
+            name
+            created_at
+        }
+    }
+}
