@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9)
             ibtn5.setOnClickListener {
-                var i= Intent(this@MainActivity,MemberInfoActivity::class.java)
+                var i= Intent(this@MainActivity, MemberInfoReviseActivity::class.java)
                 startActivity(i);
         };
 

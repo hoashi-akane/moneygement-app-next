@@ -164,4 +164,31 @@ class UserRepository: GraphqlBase(){
 
         return result
     }
+
+//   ユーザ情報更新
+    suspend fun updateUser(updateUserMutation: UpdateUserMutation): User {
+        var user = User()
+
+        GlobalScope.launch {
+            apolloClient
+                    .mutate(updateUserMutation)
+                    .enqueue(object : ApolloCall.Callback<UpdateUserMutation.Data>() {
+                        override fun onFailure(e: ApolloException) {
+                            e.printStackTrace()
+                        }
+
+                        override fun onResponse(response: Response<UpdateUserMutation.Data>) {
+                            var result = response.data
+                            if (result?.updateUser() == null || response.hasErrors()) {
+                            } else {
+                                user.id = result.updateUser()!!.id()
+                                user.name = result.updateUser()!!.name()
+                                user.mail = result.updateUser()!!.email()
+                                user.nickName = result.updateUser()!!.nickname()
+                            }
+                        }
+                    })
+        }.join()
+        return user
+    }
 }
