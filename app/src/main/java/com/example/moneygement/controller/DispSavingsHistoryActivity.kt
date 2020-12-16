@@ -39,7 +39,7 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
             var savingsDetailsQuery = SavingsDetailsQuery.builder()
                 .savings_id(1)
                 .first(1)
-                .last(10)
+                .last(100)
                 .build()
 
             savingsHistoryList = SavingsDetails().getSavingsHistory(savingsDetailsQuery)

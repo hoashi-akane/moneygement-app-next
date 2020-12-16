@@ -24,7 +24,7 @@ class DispAdvisorActivity : AppCompatActivity() {
 
         var advisor2 = findViewById<Button>(R.id.adviser2)
         advisor2.setOnClickListener{
-            var i= Intent(this@DispAdvisorActivity,DispUserListActivity::class.java)
+            var i= Intent(this@DispAdvisorActivity, DispUserListActivity::class.java)
             startActivity(i);
         };
 

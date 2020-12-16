@@ -24,9 +24,14 @@ import java.util.*
 
 class DispLedgerGraphActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDispLedgerGraphBinding
+    var ledgerId = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disp_ledger_graph)
+
+        var intent = intent
+        ledgerId = intent.getIntExtra("ledgerId", 0)
+
 
 //      viewModelを結び付けているが、binding的役割はない・・・泣
         val viewModel: LedgerGraphViewModel by viewModels()
@@ -41,12 +46,22 @@ class DispLedgerGraphActivity : AppCompatActivity() {
         var expenseGraph = findViewById<View>(R.id.chart2) as PieChart
 
 //      非同期でviewModelのメソッドを呼びデータが取得され次第、画面に適用させる。
+        if(ledgerId == 0){
+            var intent = Intent(this@DispLedgerGraphActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         GlobalScope.launch {
-            viewModel.getLedgeGraphData(1)
+            viewModel.getLedgeGraphData(ledgerId)
             incomeGraph.data = PieData(viewModel.incomeGraph)
             expenseGraph.data = PieData(viewModel.expenseGraph)
             incomeGraph.invalidate()
             expenseGraph.invalidate()
+        }
+
+        val cancel = findViewById<View>(R.id.cancel) as Button
+        cancel.setOnClickListener {
+            onBackPressed()
         }
     }
 
@@ -69,10 +84,4 @@ class DispLedgerGraphActivity : AppCompatActivity() {
 //        val piechart2 = findViewById<View>(R.id.chart2) as PieChart
 //        piechart2.data = data
 //        piechart2.invalidate()
-//        val cancel = findViewById<View>(R.id.cancel) as Button
-//        cancel.setOnClickListener {
-//            val intent = Intent(this@DispLedgerGraphActivity, MainActivity::class.java)
-//            startActivity(intent)
-//        }
-//    }
 }

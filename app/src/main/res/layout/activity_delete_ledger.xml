@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.example.moneygement.viewmodel.LedgerChoiceViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".controller.DeleteLedgerActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="455dp"
+            android:layout_height="63dp"
+            android:background="#FF799C"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/cancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="69dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:background="#FF799C"
+                android:text="←"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints"
+                tools:text="←" />
+
+            <TextView
+                android:id="@+id/savingshistory"
+                android:layout_width="154dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/deleteLedger"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="削除する家計簿"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.358" />
+
+        <Spinner
+            android:id="@+id/ledgerList"
+            android:layout_width="272dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:entries="@{vm.ledgerNameList}"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.479" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="162dp"
+            android:layout_height="54dp"
+            android:background="#FF799C"
+            android:text="グループ削除"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

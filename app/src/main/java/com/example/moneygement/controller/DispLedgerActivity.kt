@@ -2,6 +2,8 @@ package com.example.moneygement.controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
@@ -17,6 +19,8 @@ import com.example.LedgersQuery
 import com.example.moneygement.R
 import com.example.moneygement.databinding.ActivityDispLedgerBinding
 import com.example.moneygement.viewmodel.LedgerViewModel
+import kotlinx.android.synthetic.main.activity_disp_ledger.*
+import kotlinx.android.synthetic.main.activity_disp_share_ledger.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -35,10 +39,14 @@ class DispLedgerActivity : AppCompatActivity() {
     private lateinit var ledgerList: List<LedgersQuery.Ledger1>
     private var incomeList= mutableListOf<LedgerQuery.Income>()
     private var expenseList= mutableListOf<LedgerQuery.Expense>()
+    private var ledgerId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disp_ledger)
+
+        val intent = intent
+        ledgerId = intent.getIntExtra("ledgerId", 0)
 
         val viewModel :LedgerViewModel by viewModels()
 
@@ -60,6 +68,9 @@ class DispLedgerActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 GlobalScope.launch{
                     viewModel.listPositionToGetLedgerData(position)
+                    incomeList = viewModel!!.ledger.incomes()
+                    expenseList = viewModel.ledger.expenses()
+                    changeAdapter()
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -93,6 +104,17 @@ class DispLedgerActivity : AppCompatActivity() {
         if(viewModel == null){
             println("era- ")
         }
+
+//        if(ledgerId != 0){
+//            var count = 0
+//            ledgerList.forEach{
+//                if(it.id() == ledgerId){
+//                    ledgerListSpinner.setSelection(count)
+//                    return@forEach
+//                }
+//                count++
+//            }
+//        }
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             var strMonth = (month+1).toString()
@@ -128,6 +150,7 @@ class DispLedgerActivity : AppCompatActivity() {
             intent.putExtra("ledgerId", ledgerList[(index.toInt())].id())
             startActivity(intent)
         }
+
         val expenseButton = findViewById<View>(R.id.expenseHouseHold) as Button
         expenseButton.setOnClickListener {
             val index = ledgerListSpinner.selectedItemId
@@ -136,10 +159,29 @@ class DispLedgerActivity : AppCompatActivity() {
             intent.putExtra("ledgerId", ledgerList[(index.toInt())].id())
             startActivity(intent)
         }
+
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
             val intent = Intent(this@DispLedgerActivity, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        val graphBtn = graphBtn3
+        graphBtn.setOnClickListener {
+            val index = ledgerListSpinner.selectedItemId
+            val intent = Intent(this@DispLedgerActivity, DispLedgerGraphActivity::class.java)
+            intent.putExtra("ledgerId", ledgerList[index.toInt()].id())
+            startActivity(intent)
+        }
+    }
+
+    private fun changeAdapter(){
+        val handler = Handler(Looper.getMainLooper())
+        handler.post{
+            incomeRecyclerView.adapter = IncomeRecyclerAdapter(incomeList)
+            expenseRecyclerView.adapter = ExpenseRecyclerAdapter(expenseList)
+            incomeViewAdapter.notifyDataSetChanged()
+            expenseViewAdapter.notifyDataSetChanged()
         }
     }
 }

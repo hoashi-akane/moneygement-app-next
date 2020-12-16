@@ -10,21 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".controller.DispShareLedgerActivity">
-
-        <Button
-            android:id="@+id/graphBtn2"
-            android:layout_width="158dp"
-            android:layout_height="41dp"
-            android:background="#FF799C"
-            android:text="グラフを表示"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.281" />
+        tools:context=".controller.DispAdviserLedgerActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -53,36 +39,34 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/shareledger"
-                android:layout_width="140dp"
+                android:id="@+id/savingshistory"
+                android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
-                android:text="@string/shareledger"
+                android:text="アドバイザ家計簿閲覧"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintHorizontal_bias="0.798"
                 app:layout_constraintStart_toStartOf="@+id/cancel"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.521" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/chatButton"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_marginTop="4dp"
                 android:adjustViewBounds="true"
                 android:background="@null"
                 android:scaleType="fitXY"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.249"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.209"
+                app:layout_constraintStart_toStartOf="@+id/cancel"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.461"
                 app:srcCompat="@mipmap/img16"
                 tools:ignore="MissingConstraints" />
 
@@ -103,39 +87,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.087"
             />
-
-        <LinearLayout
-            android:layout_width="109dp"
-            android:layout_height="38dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.96"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01999998">
-
-            <Button
-                android:id="@+id/inomeHouseHold"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#4DDDB5"
-                android:text="収入"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF" />
-
-            <Button
-                android:id="@+id/expenseHouseHold"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#5A80CD"
-                android:text="支出"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
 
         <TextView
             android:id="@+id/totalassets"
@@ -216,18 +167,18 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/invitationBtn"
-            android:layout_width="57dp"
-            android:layout_height="34dp"
-            android:background="#F4BBBB"
-            android:text="招待"
+            android:id="@+id/graphBtn"
+            android:layout_width="158dp"
+            android:layout_height="41dp"
+            android:background="#FF799C"
+            android:text="グラフを表示"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@+id/expense_rcycler"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.968"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.098" />
+            app:layout_constraintVertical_bias="0.281" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

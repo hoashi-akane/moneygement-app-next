@@ -45,6 +45,7 @@ class LedgerGraphViewModel : ViewModel() {
         }
         var pieDataSet = PieDataSet(pieEntries, "")
         pieDataSet.setAutomaticallyDisableSliceSpacing(true)
+        pieDataSet.valueTextSize = 15F
     pieDataSet.colors = GraphColor().ORIGINAL_COLORS
         return pieDataSet
     }

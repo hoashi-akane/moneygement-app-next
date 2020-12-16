@@ -152,5 +152,5 @@
     <string name="invite">招待</string>
     <string name="ledgermenu">家計簿メニュー</string>
     <string name="newledger">家計簿作成</string>
-    <string name="deleteledger">家計簿削除</string>
+    <string name="deleteLedger">家計簿削除</string>
 </resources>

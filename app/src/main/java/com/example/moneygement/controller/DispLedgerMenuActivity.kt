@@ -28,7 +28,7 @@ class DispLedgerMenuActivity : AppCompatActivity() {
         }
         val deleteledgerbtn = findViewById<View>(R.id.deleteledgerbtn) as Button
         deleteledgerbtn.setOnClickListener {
-            val intent = Intent(this@DispLedgerMenuActivity, MainActivity::class.java)
+            val intent = Intent(this@DispLedgerMenuActivity, DeleteLedgerActivity::class.java)
             startActivity(intent)
         }
         val cancelButton = findViewById<View>(R.id.cancel) as Button

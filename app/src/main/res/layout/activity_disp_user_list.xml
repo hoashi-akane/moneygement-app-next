@@ -53,6 +53,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userList"
         android:layout_width="402dp"
         android:layout_height="495dp"
         app:layout_constraintBottom_toBottomOf="parent"

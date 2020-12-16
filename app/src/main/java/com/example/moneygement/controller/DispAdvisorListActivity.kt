@@ -72,7 +72,6 @@ class DispAdvisorListActivity: AppCompatActivity(), AdviserRecyclerAdapter.MyVie
 
     override fun onItemClick(view: View, position: Int, adviserItem: AdviserListFilterQuery.AdviserList) {
             val intent = Intent(this@DispAdvisorListActivity, DispAdvisorDetailActivity::class.java)
-            println(adviserItem)
             intent.putExtra("id", adviserItem.id())
             intent.putExtra("introduction", adviserItem.introduction())
             intent.putExtra("adviserName", adviserItem.adviser_name())

@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
-        var userId = encryptedSharedPreferences.getInt("id", 1)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
 
 //      例外処理
         if(userId == 0){
-
+            AuthService().logout(applicationContext)
+            var intent = Intent(this@MainActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         runBlocking {
@@ -54,15 +56,9 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn1 = findViewById<ImageButton>(R.id.imageButton5)
         ibtn1.setOnClickListener{
-            var i = Intent(this@MainActivity, DispLedgerActivity::class.java)
+            var i = Intent(this@MainActivity, DispLedgerMenuActivity::class.java)
             startActivity(i);
-        };
-
-        var ibtn2 = findViewById<ImageButton>(R.id.imageButton6)
-        ibtn2.setOnClickListener{
-                var i= Intent(this@MainActivity,DispLedgerGraphActivity::class.java)
-                startActivity(i);
-        };
+        }
 
         var ibtn3 = findViewById<ImageButton>(R.id.imageButton7)
             ibtn3.setOnClickListener{
@@ -78,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         var ibtn5 = findViewById<ImageButton>(R.id.imageButton9)
             ibtn5.setOnClickListener {
-                var i= Intent(this@MainActivity,MemberInfoActivity::class.java)
+                var i= Intent(this@MainActivity, MemberInfoReviseActivity::class.java)
                 startActivity(i);
         };
 
@@ -107,10 +103,10 @@ class MainActivity : AppCompatActivity() {
         var level = s / t
 
         when {
-            level.isNaN() -> imageView2.setImageResource(R.mipmap.`level1`)
-            level < 0.5 -> imageView2.setImageResource(R.mipmap.`level1`)
+            level.isNaN() -> imageView2.setImageResource(R.mipmap.level1)
+            level < 0.5 -> imageView2.setImageResource(R.mipmap.level1)
             level < 1.0 -> imageView2.setImageResource(R.mipmap.level2)
-            level == 1.0 -> imageView2.setImageResource(R.mipmap.`level2`)
+            level >= 1.0 -> imageView2.setImageResource(R.mipmap.level2)
         }
 
     }
