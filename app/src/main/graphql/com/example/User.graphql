@@ -132,6 +132,7 @@ mutation updateUser(
         adviser_name
         introduction
     }
+}
 
 // グループ招待
 mutation addGroup(
