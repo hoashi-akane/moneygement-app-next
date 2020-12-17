@@ -55,12 +55,12 @@ class InputShareIncomeActivity : AppCompatActivity() {
             //              値を受取り
             val money = (amounToMoney.text.toString()).toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
 
 //              保存処理
             val createIncomeDetailMutation = CreateIncomeDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)
@@ -79,12 +79,12 @@ class InputShareIncomeActivity : AppCompatActivity() {
         saveBtn.setOnClickListener {
             val money = (amounToMoney.text.toString()).toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
 
 //              保存処理
             val createIncomeDetailMutation = CreateIncomeDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)

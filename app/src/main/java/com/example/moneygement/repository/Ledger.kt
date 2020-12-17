@@ -15,7 +15,7 @@ class Ledger: GraphqlBase() {
 
         val job = GlobalScope.launch {
             var response = try{
-                apolloClient.query(LedgersQuery(1)).await()
+                apolloClient.query(LedgersQuery(userId)).await()
             }catch(e: ApolloException){
                 e.printStackTrace()
                 return@launch
@@ -37,7 +37,7 @@ class Ledger: GraphqlBase() {
 
         val job = GlobalScope.launch {
             var response = try{
-                apolloClient.query(AdviserLedgersQuery(1)).await()
+                apolloClient.query(AdviserLedgersQuery(adviserId)).await()
             }catch(e: ApolloException){
                 e.printStackTrace()
                 return@launch

@@ -7,7 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.InsertSavingsDetailsMutation
 import com.example.moneygement.R
+import com.example.moneygement.repository.SavingsDetails
+import com.example.moneygement.service.AuthService
 
 
 class InputSpendingExpenseAmountActivity : AppCompatActivity() {
@@ -23,6 +26,9 @@ class InputSpendingExpenseAmountActivity : AppCompatActivity() {
         val cancelbtn = findViewById<View>(R.id.cancel) as Button
         val saveBtn = findViewById<View>(R.id.savebutton) as Button
 
+        var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
+
 //      日付の受取
         val rIntent = intent
         var date = rIntent.getStringExtra("checkday")
@@ -33,15 +39,21 @@ class InputSpendingExpenseAmountActivity : AppCompatActivity() {
             date = date.replace("[年月]".toRegex(), "-")
             date = date.replace("日", "")
 
-            val savingAmount = findViewById<View>(R.id.money) as EditText
-            val note = findViewById<View>(R.id.note) as EditText
+            val savingAmount = findViewById<EditText>(R.id.money) as EditText
+            val note = findViewById<EditText>(R.id.note) as EditText
             val money = savingAmount.text.toString().toInt()
 
-            /**
-             * ミューテーションに値をセット(Graphql未実装だから完成後)
-             *
-             */
+//          ミューテーションに値をセット
+            val insertSavingsDetailsMutation = InsertSavingsDetailsMutation.builder()
+                    .savingId(userId)
+                    .savingAmount(-money)
+                    .note(note.text.toString())
+                    .savingDate(date)
+                    .build()
+            SavingsDetails().inputSavingsDetails(insertSavingsDetailsMutation)
 
+            val intent = Intent(this@InputSpendingExpenseAmountActivity, DispCalendarActivity::class.java)
+            startActivity(intent)
         }
 
         cancelbtn.setOnClickListener{
@@ -50,7 +62,27 @@ class InputSpendingExpenseAmountActivity : AppCompatActivity() {
         }
 
         continueBtn.setOnClickListener{
+            //            graphqlが受け取れる形に整形
+            var oldDate = date
+            date = date.replace("[年月]".toRegex(), "-")
+            date = date.replace("日","")
+
+
+            val savingAmount = findViewById<EditText>(R.id.money) as EditText
+            val note = findViewById<EditText>(R.id.note) as EditText
+            val money = savingAmount.text.toString().toInt()
+
+//          ミューテーションに値をセット
+            val insertSavingsDetailsMutation = InsertSavingsDetailsMutation.builder()
+                    .savingId(userId)
+                    .savingAmount(-money)
+                    .note(note.text.toString())
+                    .savingDate(date)
+                    .build()
+            SavingsDetails().inputSavingsDetails(insertSavingsDetailsMutation)
+
             val intent = Intent(this@InputSpendingExpenseAmountActivity, DispExpensesCalendarActivity::class.java)
+            intent.putExtra("checkday", oldDate)
             startActivity(intent)
         }
     }

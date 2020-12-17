@@ -17,7 +17,7 @@ class LedgerGraphViewModel : ViewModel() {
     private var categoryIncomesMoney = mutableMapOf<String, Int>()
 
     //カテゴリーIDとカテゴリー名
-    var category = MutableLiveData<Map<Int, String>>(mapOf(1 to "生活費", 2 to "交通費",3 to "食費"));
+//    var category = MutableLiveData<Map<Int, String>>(mapOf());
     lateinit var incomeGraph: PieDataSet
     lateinit var expenseGraph: PieDataSet
 
