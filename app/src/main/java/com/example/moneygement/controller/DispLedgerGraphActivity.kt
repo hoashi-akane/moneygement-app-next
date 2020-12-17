@@ -42,8 +42,8 @@ class DispLedgerGraphActivity : AppCompatActivity() {
         binding.lifecycleOwner = this@DispLedgerGraphActivity
         binding.vm = viewModel
 
-        var incomeGraph = findViewById<View>(R.id.chart1) as PieChart
-        var expenseGraph = findViewById<View>(R.id.chart2) as PieChart
+        var incomeGraph = findViewById<View>(R.id.chart2) as PieChart
+        var expenseGraph = findViewById<View>(R.id.chart1) as PieChart
 
 //      非同期でviewModelのメソッドを呼びデータが取得され次第、画面に適用させる。
         if(ledgerId == 0){

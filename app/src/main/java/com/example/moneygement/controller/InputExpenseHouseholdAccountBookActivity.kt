@@ -14,6 +14,7 @@ import com.example.LedgersQuery
 import com.example.moneygement.R
 import com.example.moneygement.controller.InputExpenseHouseholdAccountBookActivity
 import com.example.moneygement.repository.Ledger
+import kotlinx.android.synthetic.main.activity_input_share_income.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -53,12 +54,13 @@ class InputExpenseHouseholdAccountBookActivity : AppCompatActivity() {
         continueButton.setOnClickListener { //エディットテキストを探す
             val money = amounToMoney.text.toString().toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
+
 
 //              保存処理
             val createExpenseDetailMutation = CreateExpenseDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)
@@ -74,12 +76,13 @@ class InputExpenseHouseholdAccountBookActivity : AppCompatActivity() {
         saveBtn.setOnClickListener {
             val money = amounToMoney.text.toString().toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
+
 
             //              保存処理
             val createExpenseDetailMutation = CreateExpenseDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)

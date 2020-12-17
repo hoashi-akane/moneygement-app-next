@@ -49,12 +49,12 @@ class InputShareExpensesActivity : AppCompatActivity() {
         continueButton.setOnClickListener { //エディットテキストを探す
             val money = amounToMoney.text.toString().toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
 
 //              保存処理
             val createExpenseDetailMutation = CreateExpenseDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)
@@ -70,12 +70,12 @@ class InputShareExpensesActivity : AppCompatActivity() {
         saveBtn.setOnClickListener {
             val money = amounToMoney.text.toString().toInt()
             val note = textPersonName.text.toString()
-            val category = textCategory.selectedItem.toString()
+            val categoryId = textCategory.selectedItemPosition
 
             //              保存処理
             val createExpenseDetailMutation = CreateExpenseDetailMutation.builder()
                     .ledgerId(ledgerId)
-                    .categoryId(1)
+                    .categoryId(categoryId + 1)
                     .date(insertDate)
                     .amount(money)
                     .note(note)
