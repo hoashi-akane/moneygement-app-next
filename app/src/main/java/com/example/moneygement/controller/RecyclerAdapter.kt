@@ -28,6 +28,6 @@ class RecyclerAdapter(private var savingsHistoryList: List<SavingsDetailsQuery.S
         var date  = savingsHistoryList[position].saving_date().toString().substring(0, 10).split("-")
 
         holder.view.savingDate.text = date[0]+"年"+date[1]+"月"+date[2]+"日"
-        holder.view.savingAmount.text = "+" + savingsHistoryList[position].saving_amount().toString()
+        holder.view.savingAmount.text = savingsHistoryList[position].saving_amount().toString() + "円"
     }
 }

@@ -77,7 +77,7 @@ class InputSavingAmountActivity : AppCompatActivity() {
 
 //          ミューテーションに値をセット
             val insertSavingsDetailsMutation = InsertSavingsDetailsMutation.builder()
-                    .savingId(1)
+                    .savingId(userId)
                     .savingAmount(money)
                     .note(note.text.toString())
                     .savingDate(date)

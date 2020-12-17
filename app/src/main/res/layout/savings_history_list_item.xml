@@ -14,22 +14,22 @@
             android:id="@+id/savingAmount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="4dp"
+            android:layout_marginRight="20dp"
             android:gravity="center"
-            android:paddingLeft="70dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:text="TextView"
             android:textAlignment="textEnd"
             android:textColor="#009688"
-            android:textSize="30sp"
-            tools:text="@string/amountamount"
-            tools:ignore="RtlCompat" />
+            android:textSize="25sp"
+            tools:ignore="RtlCompat"
+            tools:text="@string/amountamount" />
 
         <TextView
             android:id="@+id/savingDate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginRight="150dp"
             android:elegantTextHeight="false"
             android:gravity="center"
             android:paddingLeft="30dp"

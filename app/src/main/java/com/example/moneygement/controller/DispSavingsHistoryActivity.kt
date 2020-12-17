@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.SavingsDetailsQuery
 import com.example.moneygement.R
 import com.example.moneygement.repository.SavingsDetails
+import com.example.moneygement.service.AuthService
 import kotlinx.android.synthetic.main.activity_disp_savingshistory.view.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -24,6 +25,8 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disp_savingshistory)
 
+        var encryptedSharedPreferences = AuthService().createAuthSharedPreferences(applicationContext)
+        var userId = encryptedSharedPreferences.getInt("id", 0)
 
         viewManager = LinearLayoutManager(this@DispSavingsHistoryActivity)
         viewAdapter = RecyclerAdapter(savingsHistoryList)
@@ -37,8 +40,8 @@ class DispSavingsHistoryActivity : AppCompatActivity() {
 
         MainScope().launch {
             var savingsDetailsQuery = SavingsDetailsQuery.builder()
-                .savings_id(1)
-                .first(1)
+                .savings_id(userId)
+                .first(0)
                 .last(100)
                 .build()
 

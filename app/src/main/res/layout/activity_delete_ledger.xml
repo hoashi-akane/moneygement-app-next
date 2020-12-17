@@ -89,7 +89,7 @@
             android:layout_width="162dp"
             android:layout_height="54dp"
             android:background="#FF799C"
-            android:text="グループ削除"
+            android:text="家計簿削除"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
