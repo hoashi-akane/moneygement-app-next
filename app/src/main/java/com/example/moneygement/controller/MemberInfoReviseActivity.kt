@@ -124,6 +124,12 @@ class MemberInfoReviseActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val logoutBtn = logout_button
+        logoutBtn.setOnClickListener {
+            AuthService().logout(applicationContext)
+            val intent = Intent(this@MemberInfoReviseActivity, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         val cancelButton = findViewById<View>(R.id.cancel) as Button
         cancelButton.setOnClickListener {
