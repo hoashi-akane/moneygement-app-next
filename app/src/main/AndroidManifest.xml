@@ -60,6 +60,7 @@
         <activity android:name=".controller.DispUserListActivity" />
         <activity android:name=".controller.DispLedgerMenuActivity" />
         <activity android:name=".controller.InvitationGroupActivity"></activity>
+        <activity android:name=".controller.NewLedgerActivity"></activity>
     </application>
 
 </manifest>
