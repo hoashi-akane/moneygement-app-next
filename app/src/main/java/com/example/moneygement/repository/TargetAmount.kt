@@ -3,19 +3,20 @@ package com.example.moneygement.repository
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.TargetAmountQuery
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class TargetAmount: GraphqlBase() {
+class TargetAmount : GraphqlBase() {
 
 
     private val apolloClient = super.access()
     suspend fun getTargetAmount(targetAmountQuery: TargetAmountQuery): Int? {
         var result: TargetAmountQuery.SavingDetail? = null
-        var targetAmount:Int?
-            targetAmount = null
+        var targetAmount: Int?
+        targetAmount = null
 
-        val job = GlobalScope.launch {
+        val job = CoroutineScope(Dispatchers.IO).launch {
             var response = try {
                 apolloClient.query(targetAmountQuery).await()
             } catch (e: ApolloException) {

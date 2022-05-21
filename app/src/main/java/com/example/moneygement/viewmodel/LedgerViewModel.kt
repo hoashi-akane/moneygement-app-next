@@ -1,8 +1,5 @@
 package com.example.moneygement.viewmodel
 
-import android.view.View
-import android.widget.AdapterView
-import androidx.databinding.Bindable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.AdviserLedgersQuery
@@ -19,55 +16,60 @@ class LedgerViewModel : ViewModel() {
     var shareItemList = listOf<ShareLedgersQuery.ShareLedger>()
     var adviserListItem = listOf<AdviserLedgersQuery.AdviserLedger>()
     var ledgerNameList = MutableLiveData<List<String>>()
-    var amounts = MutableLiveData<Map<String, String>>(mapOf("totalIncomes" to "収入額　¥0", "totalExpenses" to "支出額 ¥0", "totalMoney" to "総資産額 ¥0"))
-    var nameList= mutableListOf<String>()
+    var amounts = MutableLiveData(
+        mapOf(
+            "totalIncomes" to "収入額　¥0",
+            "totalExpenses" to "支出額 ¥0",
+            "totalMoney" to "総資産額 ¥0"
+        )
+    )
+    var nameList = mutableListOf<String>()
     lateinit var ledger: LedgerQuery.Ledger1
 
-    suspend fun getLedgerList(userId: Int){
-        var result = Ledger().getLedgerList(userId)
-        if(result != null){
-            listItem = result
-            result.forEach{
-                nameList.add(it.name())
+    suspend fun getLedgerList(userId: Int) {
+        Ledger().getLedgerList(userId)?.let {
+            // TODO:この1行消せそう
+            listItem = it
+            it.forEach { ledger ->
+                nameList.add(ledger.name())
             }
+            ledgerNameList.postValue(nameList)
         }
-        ledgerNameList.postValue(nameList)
     }
 
-    suspend fun getShareLedgerList(userId: Int){
-        var result = ShareRepository().getShareLedgerList(userId)
-        if(result != null){
-            shareItemList = result
-            result.forEach{
-                nameList.add(it.name())
+    suspend fun getShareLedgerList(userId: Int) {
+        ShareRepository().getShareLedgerList(userId)?.let {
+            shareItemList = it
+            it.forEach { shareLedger ->
+                nameList.add(shareLedger.name())
             }
+            ledgerNameList.postValue(nameList)
         }
-        ledgerNameList.postValue(nameList)
     }
 
-    suspend fun getAdviserLedgerList(adviserId: Int){
-        var result = Ledger().getAdviserLedgerList(adviserId)
-        if(result != null){
-            adviserListItem = result
-            result.forEach{
-                nameList.add(it.name())
+    suspend fun getAdviserLedgerList(adviserId: Int) {
+        Ledger().getAdviserLedgerList(adviserId)?.let {
+            adviserListItem = it
+            it.forEach { adviserLedger ->
+                nameList.add(adviserLedger.name())
             }
+            ledgerNameList.postValue(nameList)
         }
-        ledgerNameList.postValue(nameList)
     }
 
 
-    suspend fun getLedgerData(id: Int){
-        var result = Ledger().getLedger(id)
-        var amountList = mutableMapOf<String, String>()
-        if(result != null) {
-            ledger = result
-            var totalIncomes = totalIncomesAmount(result.incomes())
-            var totalExpenses = totalExpensesAmount(result.expenses())
-            amountList["totalIncomes"] = "収入額 ¥$totalIncomes"
-            amountList["totalExpenses"] = "支出額 ¥$totalExpenses"
-            amountList["totalMoney"] = "総資産額 ¥"+ (totalIncomes - totalExpenses).toString()
-            amounts.postValue(amountList)
+    private suspend fun getLedgerData(id: Int) {
+        Ledger().getLedger(id)?.let {
+            ledger = it
+            val totalIncomes = totalIncomesAmount(it.incomes())
+            val totalExpenses = totalExpensesAmount(it.expenses())
+            amounts.postValue(
+                mutableMapOf(
+                    Pair("totalIncomes", "収入額 ¥$totalIncomes"),
+                    Pair("totalExpenses", "支出額 ¥$totalExpenses"),
+                    Pair("totalMoney", "総資産額 ¥${(totalIncomes - totalExpenses)}")
+                )
+            )
         }
     }
 
@@ -79,13 +81,13 @@ class LedgerViewModel : ViewModel() {
         getLedgerData(shareItemList[position].id())
     }
 
-    suspend fun listPositionToGetAdviserLedgerData(position: Int){
+    suspend fun listPositionToGetAdviserLedgerData(position: Int) {
         getLedgerData(adviserListItem[position].id())
     }
 
     private fun totalIncomesAmount(incomes: MutableList<LedgerQuery.Income>): Int {
         var totalIncomeAmount = 0
-        incomes.forEach{
+        incomes.forEach {
             totalIncomeAmount += it.amount()
         }
         return totalIncomeAmount

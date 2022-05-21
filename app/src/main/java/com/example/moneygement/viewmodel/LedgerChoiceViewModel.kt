@@ -11,27 +11,25 @@ class LedgerChoiceViewModel : ViewModel() {
     var listItem = listOf<LedgersQuery.Ledger1>()
     var ledgerNameList = MutableLiveData<List<String>>()
     var shareLedgerList = listOf<ShareLedgersQuery.ShareLedger>()
-    var nameList= mutableListOf<String>()
+    private var nameList = mutableListOf<String>()
 
-    suspend fun getLedgerList(userId: Int){
-        var result = Ledger().getLedgerList(userId)
-        if(result != null){
-            listItem = result
-            result.forEach{
+    suspend fun getLedgerList(userId: Int) {
+        Ledger().getLedgerList(userId)?.let { list ->
+            listItem = list
+            list.forEach {
                 nameList.add(it.name())
             }
+            ledgerNameList.postValue(nameList)
         }
-        ledgerNameList.postValue(nameList)
     }
 
-    suspend fun getShareLedgerList(userId: Int){
-        var result = ShareRepository().getShareLedgerList(userId)
-        if(result != null){
-            shareLedgerList = result
-            result.forEach{
+    suspend fun getShareLedgerList(userId: Int) {
+        ShareRepository().getShareLedgerList(userId)?.let { list ->
+            shareLedgerList = list
+            list.forEach {
                 nameList.add(it.name())
             }
+            ledgerNameList.postValue(nameList)
         }
-        ledgerNameList.postValue(nameList)
     }
 }

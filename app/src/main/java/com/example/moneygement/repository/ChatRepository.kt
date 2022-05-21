@@ -4,46 +4,47 @@ import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.ChatFilterQuery
 import com.example.NewChatMutation
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ChatRepository: GraphqlBase(){
+class ChatRepository : GraphqlBase() {
 
     private val apolloClient = super.access()
 
-//  チャット投稿
-    fun createChat(newChatMutation: NewChatMutation){
-        GlobalScope.launch {
-            val response = try{
+    //  チャット投稿
+    fun createChat(newChatMutation: NewChatMutation) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = try {
                 apolloClient.mutate(newChatMutation).await()
-            } catch (e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 //          取る値があれば値を取ってくる
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 return@launch
             }
         }
     }
 
-//　チャット一覧取得
+    //　チャット一覧取得
     suspend fun getChatList(chatFillterQuery: ChatFilterQuery): MutableList<ChatFilterQuery.ChatList> {
         var chatQuery: List<ChatFilterQuery.ChatList>?
         var chatList = mutableListOf<ChatFilterQuery.ChatList>()
-        var job = GlobalScope.launch{
-            val response = try{
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            val response = try {
                 apolloClient.query(chatFillterQuery).await()
-            } catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
             chatQuery = response.data?.chatList()
 
-            if(response.hasErrors() || chatQuery == null){
+            if (response.hasErrors() || chatQuery == null) {
                 return@launch
-            }else{
+            } else {
                 chatList = chatQuery as MutableList<ChatFilterQuery.ChatList>
             }
         }
