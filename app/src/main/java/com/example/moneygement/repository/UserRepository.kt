@@ -7,10 +7,12 @@ import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.*
 import com.example.moneygement.model.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class UserRepository: GraphqlBase(){
+class UserRepository : GraphqlBase() {
 
     private val apolloClient = super.access()
 
@@ -27,18 +29,18 @@ class UserRepository: GraphqlBase(){
 
 
         var loginQuery: LoginQuery.Login? = null
-        var job = GlobalScope.launch {
+        var job = CoroutineScope(Dispatchers.IO).launch {
             var response = try {
                 apolloClient.query(LoginQuery(email, password)).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
             val result = response.data
-            if(result == null || response.hasErrors()){
+            if (result == null || response.hasErrors()) {
                 return@launch
-            }else{
+            } else {
                 loginQuery = result.login()
             }
         }
@@ -51,71 +53,71 @@ class UserRepository: GraphqlBase(){
         var userInfo = User()
         GlobalScope.launch {
             apolloClient
-                    .mutate(user)
-                    .enqueue(object : ApolloCall.Callback<InsertUserMutation.Data>() {
-                        override fun onFailure(e: ApolloException) {
-                            e.printStackTrace()
-                        }
+                .mutate(user)
+                .enqueue(object : ApolloCall.Callback<InsertUserMutation.Data>() {
+                    override fun onFailure(e: ApolloException) {
+                        e.printStackTrace()
+                    }
 
-                        override fun onResponse(response: Response<InsertUserMutation.Data>) {
-                            var result = response.data
-                            if (result?.createUser() == null || response.hasErrors()) {
-                            } else {
-                                userInfo.id = result.createUser()!!.id()
-                                userInfo.name = result.createUser()!!.name()
-                                userInfo.mail = result.createUser()!!.email()
-                                userInfo.nickName = result.createUser()!!.nickname()
-                            }
+                    override fun onResponse(response: Response<InsertUserMutation.Data>) {
+                        var result = response.data
+                        if (result?.createUser() == null || response.hasErrors()) {
+                        } else {
+                            userInfo.id = result.createUser()!!.id()
+                            userInfo.name = result.createUser()!!.name()
+                            userInfo.mail = result.createUser()!!.email()
+                            userInfo.nickName = result.createUser()!!.nickname()
                         }
-                    })
+                    }
+                })
         }
         return userInfo
     }
 
-//    グループ作成
-    fun createGroup(group: InsertGroupMutation){
+    //    グループ作成
+    fun createGroup(group: InsertGroupMutation) {
         GlobalScope.launch {
-            var response = try{
+            var response = try {
                 apolloClient.mutate(group).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
         }
     }
 
-//   アドバイザ登録
-    fun createAdviser(adivser: NewAdviserMutation){
+    //   アドバイザ登録
+    fun createAdviser(adivser: NewAdviserMutation) {
         GlobalScope.launch {
-            var response = try{
+            var response = try {
                 apolloClient.mutate(adivser).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 //            レスポンスエラー
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 return@launch
             }
         }
     }
 
 
-//    アドバイザ一覧取得
+    //    アドバイザ一覧取得
     suspend fun getAdviserList(adviserListFilterQuery: AdviserListFilterQuery): MutableList<AdviserListFilterQuery.AdviserList>? {
         var result: MutableList<AdviserListFilterQuery.AdviserList>? = null
 
-        val job = GlobalScope.launch {
-            var response = try{
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            var response = try {
                 apolloClient.query(adviserListFilterQuery).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.data?.adviserList() == null || response.hasErrors()){
+            if (response.data?.adviserList() == null || response.hasErrors()) {
                 return@launch
-            }else {
+            } else {
                 result = response.data?.adviserList()!!
             }
         }
@@ -124,37 +126,37 @@ class UserRepository: GraphqlBase(){
         return result
     }
 
-//  グループ削除
-    fun deleteGroup(deleteGroupMutation: DeleteGroupMutation){
+    //  グループ削除
+    fun deleteGroup(deleteGroupMutation: DeleteGroupMutation) {
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(deleteGroupMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 return@launch
             }
         }
     }
 
-  // アドバイザ側ユーザ一覧
+    // アドバイザ側ユーザ一覧
     suspend fun getUserList(useAdvisermemberFilterQuery: UseAdvisermemberFilterQuery): MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? {
         var result: MutableList<UseAdvisermemberFilterQuery.UseAdviserMemberList>? = null
 
-        var job = GlobalScope.launch {
-            var response = try{
+        var job = CoroutineScope(Dispatchers.IO).launch {
+            var response = try {
                 apolloClient.query(useAdvisermemberFilterQuery).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
-          
-            if(response.data?.useAdviserMemberList() == null || response.hasErrors()){
+
+            if (response.data?.useAdviserMemberList() == null || response.hasErrors()) {
                 return@launch
-            }else{
+            } else {
                 result = response.data?.useAdviserMemberList()!!
             }
         }
@@ -163,43 +165,44 @@ class UserRepository: GraphqlBase(){
         return result
     }
 
-//   ユーザ情報更新
+    //   ユーザ情報更新
     suspend fun updateUser(updateUserMutation: UpdateUserMutation): User {
         var user = User()
 
         GlobalScope.launch {
             apolloClient
-                    .mutate(updateUserMutation)
-                    .enqueue(object : ApolloCall.Callback<UpdateUserMutation.Data>() {
-                        override fun onFailure(e: ApolloException) {
-                            e.printStackTrace()
-                        }
+                .mutate(updateUserMutation)
+                .enqueue(object : ApolloCall.Callback<UpdateUserMutation.Data>() {
+                    override fun onFailure(e: ApolloException) {
+                        e.printStackTrace()
+                    }
 
-                        override fun onResponse(response: Response<UpdateUserMutation.Data>) {
-                            var result = response.data
-                            if (result?.updateUser() == null || response.hasErrors()) {
-                            } else {
-                                user.id = result.updateUser()!!.id()
-                                user.name = result.updateUser()!!.name()
-                                user.mail = result.updateUser()!!.email()
-                                user.nickName = result.updateUser()!!.nickname()
-                            }
+                    override fun onResponse(response: Response<UpdateUserMutation.Data>) {
+                        var result = response.data
+                        if (result?.updateUser() == null || response.hasErrors()) {
+                        } else {
+                            user.id = result.updateUser()!!.id()
+                            user.name = result.updateUser()!!.name()
+                            user.mail = result.updateUser()!!.email()
+                            user.nickName = result.updateUser()!!.nickname()
                         }
-                    })
+                    }
+                })
         }.join()
         return user
-    }      
-      //  グループ招待
-    fun addGroup(addGroupMutation: AddGroupMutation){
+    }
+
+    //  グループ招待
+    fun addGroup(addGroupMutation: AddGroupMutation) {
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(addGroupMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 return@launch
             }
         }
