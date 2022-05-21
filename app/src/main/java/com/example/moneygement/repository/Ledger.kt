@@ -3,28 +3,30 @@ package com.example.moneygement.repository
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class Ledger: GraphqlBase() {
+class Ledger : GraphqlBase() {
 
     private val apolloClient = super.access()
 
     suspend fun getLedgerList(userId: Int): List<LedgersQuery.Ledger1>? {
         var ledgerIdList: List<LedgersQuery.Ledger1>? = null
 
-        val job = GlobalScope.launch {
-            var response = try{
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            var response = try {
                 apolloClient.query(LedgersQuery(userId)).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
             var result = response.data?.ledger()
-            if(result == null || response.hasErrors()){
+            if (result == null || response.hasErrors()) {
                 return@launch
-            }else{
+            } else {
                 ledgerIdList = result.ledgers()
             }
         }
@@ -35,18 +37,18 @@ class Ledger: GraphqlBase() {
     suspend fun getAdviserLedgerList(adviserId: Int): List<AdviserLedgersQuery.AdviserLedger>? {
         var ledgerAdviserIdList: List<AdviserLedgersQuery.AdviserLedger>? = null
 
-        val job = GlobalScope.launch {
-            var response = try{
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            var response = try {
                 apolloClient.query(AdviserLedgersQuery(adviserId)).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
             var result = response.data?.ledger()
-            if(result == null || response.hasErrors()){
+            if (result == null || response.hasErrors()) {
                 return@launch
-            }else{
+            } else {
                 ledgerAdviserIdList = result.adviserLedgers()
             }
         }
@@ -54,21 +56,21 @@ class Ledger: GraphqlBase() {
         return ledgerAdviserIdList
     }
 
-    suspend fun getLedger(id: Int): LedgerQuery.Ledger1?{
+    suspend fun getLedger(id: Int): LedgerQuery.Ledger1? {
         var ledger: LedgerQuery.Ledger1? = null
 
-        val job = GlobalScope.launch {
-            var response = try{
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            var response = try {
                 apolloClient.query(LedgerQuery(id)).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
             val result = response.data?.ledger()
-            if(result == null || response.hasErrors()){
+            if (result == null || response.hasErrors()) {
                 return@launch
-            }else{
+            } else {
                 ledger = result.ledger()
             }
         }
@@ -76,78 +78,78 @@ class Ledger: GraphqlBase() {
         return ledger
     }
 
-    fun insertExpense(createExpenseDetailMutation: CreateExpenseDetailMutation){
+    fun insertExpense(createExpenseDetailMutation: CreateExpenseDetailMutation) {
 
         GlobalScope.launch {
 
-            val response = try{
+            val response = try {
                 apolloClient.mutate(createExpenseDetailMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 println("エラー")
             }
         }
     }
 
-    fun insertIncome(createIncomeDetailMutation: CreateIncomeDetailMutation){
+    fun insertIncome(createIncomeDetailMutation: CreateIncomeDetailMutation) {
 
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(createIncomeDetailMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 println("エラー")
             }
         }
     }
 
-    fun createLedger(createLedgerMutation: CreateLedgerMutation){
+    fun createLedger(createLedgerMutation: CreateLedgerMutation) {
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(createLedgerMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 println("エラー")
             }
         }
     }
 
-    fun deleteLedger(deleteLedgerMutation: DeleteLedgerMutation){
+    fun deleteLedger(deleteLedgerMutation: DeleteLedgerMutation) {
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(deleteLedgerMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 println("エラー")
             }
         }
     }
 
-    fun addAdviser(addAdviserMutation: AddAdviserMutation){
+    fun addAdviser(addAdviserMutation: AddAdviserMutation) {
         GlobalScope.launch {
-            val response = try{
+            val response = try {
                 apolloClient.mutate(addAdviserMutation).await()
-            }catch(e: ApolloException){
+            } catch (e: ApolloException) {
                 e.printStackTrace()
                 return@launch
             }
 
-            if(response.hasErrors()){
+            if (response.hasErrors()) {
                 println("エラー")
             }
         }
