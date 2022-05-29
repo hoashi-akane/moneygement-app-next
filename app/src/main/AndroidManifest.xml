@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.DispAdviserLedgerActivity"></activity>
+        <activity android:name=".controller.DispAdviserLedgerActivity" />
         <activity android:name=".controller.DeleteLedgerActivity" />
         <activity android:name=".controller.DeleteGroupActivity" />
         <activity android:name=".UpdateAdviserInfoActivity" />
@@ -35,7 +35,8 @@
         <activity android:name=".controller.MainActivity">
 
         </activity>
-        <activity android:name=".controller.LoginActivity">
+        <activity android:name=".controller.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,8 +60,8 @@
         <activity android:name=".controller.InputLedgerChoiceActivity" />
         <activity android:name=".controller.DispUserListActivity" />
         <activity android:name=".controller.DispLedgerMenuActivity" />
-        <activity android:name=".controller.InvitationGroupActivity"></activity>
-        <activity android:name=".controller.NewLedgerActivity"></activity>
+        <activity android:name=".controller.InvitationGroupActivity" />
+        <activity android:name=".controller.NewLedgerActivity" />
     </application>
 
 </manifest>

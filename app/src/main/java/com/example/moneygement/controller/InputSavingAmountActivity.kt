@@ -30,7 +30,7 @@ class InputSavingAmountActivity : AppCompatActivity() {
 
         //日付の受け取り
         val rIntent = intent
-        var date = rIntent.getStringExtra("checkday")
+        var date = rIntent.getStringExtra("checkday") ?: ""
         dateOutput.text = date
         println(date)
 
@@ -66,7 +66,7 @@ class InputSavingAmountActivity : AppCompatActivity() {
         //続けて記入ボタン
         continueBtn.setOnClickListener {
 //            graphqlが受け取れる形に整形
-            var oldDate = date
+            val oldDate = date
             date = date.replace("[年月]".toRegex(), "-")
             date = date.replace("日","")
 

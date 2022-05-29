@@ -34,7 +34,7 @@ class InputShareIncomeActivity : AppCompatActivity() {
 
         ledgerId = rIntent.getIntExtra("ledgerId", 0)
         //年月日を受け取る
-        incomeDate = rIntent.getStringExtra("checkDay")
+        incomeDate = rIntent.getStringExtra("checkDay") ?: ""
         println(incomeDate)
         dateTextView.text = incomeDate
         insertDate = incomeDate.replace("[年月]".toRegex(), "-")
