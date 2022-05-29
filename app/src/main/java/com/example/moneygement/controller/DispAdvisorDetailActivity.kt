@@ -20,8 +20,8 @@ class DispAdvisorDetailActivity : AppCompatActivity() {
 
         val intent = intent
         id = intent.getIntExtra("id", 0)
-        advisorNickname = intent.getStringExtra("adviserName")
-        introduction = intent.getStringExtra("introduction")
+        advisorNickname = intent.getStringExtra("adviserName").toString()
+        introduction = intent.getStringExtra("introduction").toString()
     }
 
     override fun onResume() {
@@ -43,10 +43,10 @@ class DispAdvisorDetailActivity : AppCompatActivity() {
         val intent = Intent(this@DispAdvisorDetailActivity, MainActivity::class.java)
         var advisoricon = findViewById<ImageView>(R.id.imageView3)
 
-        var selfintroduction = findViewById<View>(R.id.textView7) as TextView
+        val selfintroduction = findViewById<View>(R.id.textView7) as TextView
         selfintroduction.text = introduction
 
-        var advisorurl = findViewById<View>(R.id.textView13) as TextView
+        val advisorurl = findViewById<View>(R.id.textView13) as TextView
         advisorurl.text = ""
 
         val adviserName = adviserName

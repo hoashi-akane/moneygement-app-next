@@ -31,7 +31,7 @@ class InputSpendingExpenseAmountActivity : AppCompatActivity() {
 
 //      日付の受取
         val rIntent = intent
-        var date = rIntent.getStringExtra("checkday")
+        var date = rIntent.getStringExtra("checkday") ?: ""
         dateOutput.text = date
 
         saveBtn.setOnClickListener{
